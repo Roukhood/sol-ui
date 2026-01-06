@@ -5,6 +5,7 @@ import { IconBrandGithub, IconBrandTwitter, IconPhoneCall } from '@tabler/icons-
 import { motion } from 'motion/react';
 import Link from 'next/link';
 import React from 'react'
+import CardAnimate from './card-animate';
 
 const Logo1 = () => (
     <svg viewBox="0 0 120 40" className="h-8">
@@ -95,20 +96,20 @@ function Footer() {
                 <div className="m-auto">
                     <ul className='w-sm h-40 px-10'>
                         <Link href=''>
-                        
-                        <li className={cn('list text-xl font-medium ')}>
-                            Componoents
-                        </li> </Link>
 
-                        <Link href=''>
-                        <li className='list text-3xl font-bold'>
-                            Github
-                        </li>
+                            <li className={cn('list text-xl font-medium ')}>
+                                Componoents
+                            </li> </Link>
+
+                        <Link href='https://github.com/satish-solera'>
+                            <li className='list text-3xl font-bold'>
+                                Github
+                            </li>
                         </Link>
                         <Link href=''>
-                        <li className='list text-xl'>
-                            Tweeter
-                        </li>
+                            <li className='list text-xl'>
+                                Tweeter
+                            </li>
                         </Link>
                     </ul>
                     {/* gives sponcers */}
@@ -118,22 +119,22 @@ function Footer() {
                         <motion.button
                             whileHover={{
                                 scale: 1.08,
-                                rotate: [0 , -2 , 2 , 0]
+                                rotate: [0, -2, 2, 0]
                             }}
 
                             transition={{
                                 duration: 0.3,
                                 ease: 'easeIn'
                             }}
-                            className='group flex gap-2 items-center py-2   px-3 border border-black dark:border-neutral-300 rounded-lg'>
+                            className='group flex gap-2 items-center py-2   px-3 border border-black dark:border-neutral-300 rounded-lg rotate-0'>
 
                             Book a call <IconPhoneCall size={18} className='group-hover:rotate-5' />
 
                         </motion.button>
-                      <div className="w-40  py-2">
-                          <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+                        <div className="w-40  py-2">
+                            <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
 
-                      </div>
+                        </div>
 
 
                     </div>
@@ -142,7 +143,7 @@ function Footer() {
                 {/* something crazy 3d object that moves with our other products*/}
 
 
-                <div className="bg-red-300 h-full grid grid-cols-12 gap-0  relative">
+                <div className=" h-full   ">
 
 
 
@@ -150,18 +151,43 @@ function Footer() {
 
 
 
-                    {/*                        
-                        <div className="grid grid-cols-2 gap-2 mx-auto">
-                            <button>
-                                Roukhood
-                            </button>
-                            <button>
-                                Magma
-                            </button>
-                            <button>
-                                sol-auth
-                            </button>
-                        </div> */}
+
+                    <div className="grid grid-cols-2 gap-2 mx-auto border-b border-neutral-300">
+                        <button>
+                        <Link href='https://github.com/satish-solera/sol-auth'>
+                            sol-auth
+                        </Link>
+                        </button>
+                        
+                        <button>
+                            become a sponcer
+                        </button>
+                    </div>
+
+                  <div className="relative">
+                      <h1 className='text-8xl font-bold text-center text-shadow-2xl text- text-shadow-amber-400 relative z-10'>So</h1>
+                      <h1 className='text-8xl font-bold text-center text-shadow-2xl text-shadow-amber-400  relative z-10'>Sol</h1>
+                      <h1 className='text-8xl font-bold text-center text-shadow-2xl text-shadow-amber-400 relative z-10 text-clip'>SolU</h1>
+                      <h1 className='text-8xl font-bold text-center text-shadow-2xl text-shadow-amber-400 relative z-10'>SolUI</h1>
+                  <div className="flex size-60 rounded-full bg-cyan-50 dark:bg-cyan-700 absolute top-10 left-20 text-center items-center justify-center z-20">
+                    <h1 className='-rotate-45 text-2xl font-semibold text-white'>
+                        Design What You Love
+                    </h1>
+                  </div>
+                  <div className="flex size-30 rounded-lg dark:bg-pink-700 absolute top-10 right-10 text-center items-center justify-center z-20">
+                    <h1 className=' text-xl font-semibold text-white'>
+                        Your UI , 
+                        Your Code
+                    </h1>
+                  </div>
+                  <div className="flex h-10 w-40 rounded-lg left-30 dark:bg-green-900 absolute -bottom-4 text-center items-center justify-center z-9">
+                    <h1 className=' text-sm font-medium text-white'>
+                        User Experince Matters
+                    </h1>
+                  </div>
+                  </div>
+
+                   
                 </div>
 
 
