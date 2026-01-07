@@ -1,0 +1,6 @@
+{
+    "button":{
+        "files": ["components/ui/button.tsx"],
+        "target": "components/ui"
+    }
+}
