@@ -1,0 +1,147 @@
+---
+title: Badge
+description: A component to show different Badges in our mobile.
+---
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { ComponentPreview } from "@/src/components/ui/component-preview";
+import { SourceCode } from "@/src/components/ui/source-code";
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+     <iframe
+                            src="https://sol-ui-krma.vercel.app/ButtonDemo"
+                            width={200}
+                            height={200}
+                            className='col-span-1'
+                        />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+  <SourceCode content={
+    
+    `
+import React, { useState } from "react"
+import { View, Text, Pressable, TextInput } from "react-native"
+
+export function InfoBadge({task = "Buy Coffee" } :{task : string}) {
+    const [save, setSave] = useState(true)
+    const [time, setTime] = useState(4)
+
+    function onSave() {
+        setInterval(() => {
+            if (time == 0) {
+                setTime(4)
+            }
+        })
+    }
+
+    return (
+        <View className=" min-w-80  bg-neutral-400  rounded-md ">
+            <View className="pt-4 px-4">
+                <View className="">
+                    <Text className="py-1 font-medium text-white/90 ">{save ? "Selected Tasks" : "Task has been updated"}</Text>
+                    {
+
+                        save &&
+                        <View>
+                            <Pressable className="bg-neutral-200 py-1 px-3 rounded-md"  >
+                                <Text className=" font-medium" >
+                                    {
+                                        task 
+                                    }
+                                </Text>
+                            </Pressable>
+                        </View>
+                    }
+
+                    <Pressable className="bg-slate-600 w-fit py-2 px-3 rounded-md my-2" onPress={() => { setSave((prev) => !prev); onSave() }}>
+                        <Text className="font-medium text-white">
+                            {
+                                save ? "Save" : "Undo"
+                            }
+                        </Text>
+                    </Pressable>
+                </View>
+            </View>
+            {save ? '' : <View className="bg-neutral-200 h-8 mt-4 "> <Text className="w-full m-auto px-4">This Message close in {time} seconds</Text> </View>}
+        </View>
+    )
+}
+
+    `
+     
+  }/>
+  </Tab>
+</Tabs>
+
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```bash
+    npx shadcn@latest add "https://uselayouts.com/r/bottom-menu.json"
+    ```
+  </Tab>
+  <Tab value="Manual">
+    <Steps>
+      <Step>
+        ### Install dependencies
+
+        ```bash
+        npm install nativewind
+        ```
+      </Step>
+      <Step>
+        ### Copy the code
+
+        Copy the code from the **Code** tab above into `components/ui/badge.tsx or components/ui/info-badge.tsx `.
+      </Step>
+      <Step>
+        ### Update imports
+
+        Update the imports to match your project structure.
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+
+## Usage
+
+
+```tsx
+
+import { InfoBadge }  from "@/components/ui/infoBadge";
+
+export default function InfoBadgeDemo() {
+    return <InfoBadge task="Buy Coffee" />;
+}
+```
+
+
+## Warning badge
+
+```tsx
+import { WarningBadge }  from "@/components/ui/infoBadge";
+
+export default function InfoBadgeDemo() {
+    return <WarningBadge title="Download again" />;
+}
+```
+
+## Error badge
+
+```tsx
+import { ErrorBadge }  from "@/components/ui/infoBadge";
+
+export default function InfoBadgeDemo() {
+    return <ErrorBadge title="User not found" />;
+}
+```
+
+
