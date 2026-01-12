@@ -19,8 +19,6 @@ import AnimationThemeComponent from "@/src/sections/animation-theme-component";
 // import { ComponentPreview } from "@/src/components/docs/component-preview";
 // import { ComponentContainer } from "@/src/components/docs/component-container";
 // import ComponentShow from "@/src/sections/component-show";
-import { Tabs, TabsList } from "@/src/components/ui/tabs";
-
 
 
 
