@@ -40,7 +40,7 @@ function AnimationThemeComponent() {
 
 
                 {/* show compoents here in bento grid */}
-                <div className="grid grid-cols-2 w-xl  gap-2">
+                <div className="grid grid-cols-1 max-w-50  md:max-w-full mx-auto md:grid-cols-2 w-xl  gap-2">
 
                     <div className="h-40">
                         <img src='/screen2.jpg' draggable={false} className='object-cover h-full w-full' />
@@ -48,16 +48,16 @@ function AnimationThemeComponent() {
                     <div className="h-60">
                         <img src='/screen-3.jpg' draggable={false} className='object-cover h-full w-full' />
                     </div>
-                    <div className="h-60 -translate-y-20">
+                    <div className="h-60 md:-translate-y-20">
                         <img src='/screen-4.jpg' draggable={false} className='object-cover h-full w-full' />
                     </div>
                     <div className="h-40">
                         <img src='/screen2.jpg' draggable={false} className='object-cover h-full w-full' />
                     </div>
-                    <div className="h-40  -translate-y-20">
+                    <div className="h-40  md:-translate-y-20">
                         <img src='/screen2.jpg' draggable={false} className='object-cover h-full w-full' />
                     </div>
-                    <div className="h-40 -translate-y-20">
+                    <div className="h-40 md:-translate-y-20">
                         <img src='/screen-5.jpg' draggable={false} className='object-cover h-full w-full' />
                     </div>
 
@@ -66,21 +66,9 @@ function AnimationThemeComponent() {
                 </div>
 
                 <div className="mx-auto">
-
-
-
-
                     {/* color theme components demo */}
 
-                    <div className="grid grid-cols-2 gap-1  max-w-2xl ">
-                        <iframe
-                            src="https://sol-ui-krma.vercel.app/ButtonDemo"
-                            width={200}
-                            height={200}
-                            className='col-span-1'
-                        >
-
-                        </iframe>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-1  max-w-2xl ">
                         <iframe
                             src="https://sol-ui-krma.vercel.app/ButtonDemo"
                             width={200}
@@ -100,7 +88,15 @@ function AnimationThemeComponent() {
                         <iframe
                             src="https://sol-ui-krma.vercel.app/ButtonDemo"
                             width={200}
-                            height={300}
+                            height={270}
+                            className='col-span-1'
+                        >
+
+                        </iframe>
+                        <iframe
+                            src="https://sol-ui-krma.vercel.app/ButtonDemo"
+                            width={200}
+                            height={270}
                             className='col-span-1'
                         >
 

@@ -91,7 +91,7 @@ const sampleLogos = [
 function Footer() {
     return (
         <footer className='h-[450px] '>
-            <div className="grid grid-cols-[1fr_1fr] h-full">
+            <div className="grid md:grid-cols-[1fr_1fr] h-full">
 
 
                 <div className="m-auto">
@@ -158,11 +158,9 @@ function Footer() {
                     </div>
 
                     <div className="my-10 grid grid-cols-2 gap-5 mx-2 ">
-                        <div className="border border-black dark:border-neutral-300 rounded-lg col-span-1 h-20 flex  flex-col justify-center p-4">
-                            <h1 className='text-md py-1'>Open Isuue (bug , new idea) on github</h1>
-                            <button className='group flex gap-2 items-center py-2   px-3 border border-black dark:border-neutral-300 rounded-lg w-fit'>
-                                Github <IconBrandGithub size={16} />
-                            </button>
+                        <div className="border border-black dark:border-neutral-300 rounded-lg col-span-1  flex   justify-center p-4">
+                            <h1 className='text-md py-1 flex items-center gap-2'>Open Isuue <IconBrandGithub size={16} /></h1>
+                            
                         </div>
                         <div className="w-40  py-2">
                             <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>

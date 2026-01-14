@@ -86,34 +86,10 @@ export default function Home() {
       <div className=' min-h-screen flex items-center justify-center '>
         <Hero />
       </div>
-
-      
-
-     
-
-
-      {/* <div className="min-h-screen mx-auto flex items-center justify-center ">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-5">
-                    <TrustedCompany />
-                    <TrustedCompany />
-
-
-                </div>
-            </div> */}
-
-
       <div className="min-h-50"></div>
-
       <AnimationThemeComponent />
-
       <div className="min-h-50">
-
       </div>
-
-
-{/* 
-      <ComponentShow /> */}
-
     </>
   );
 }
