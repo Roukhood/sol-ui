@@ -1,6 +1,7 @@
 
 "use client"
 import { motion } from 'motion/react'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 function Hero() {
@@ -15,6 +16,7 @@ function Hero() {
                     </h1>
                     <div className="flex items-center justify-center mx-auto">
                         <div className="">
+                           <Link href='docs/introduction'>
                             <motion.button className='py-2 border bg-black/10 border-neutral-300 text-white px-5 rounded-lg'>
                                 See UI
                             </motion.button>
@@ -35,6 +37,7 @@ function Hero() {
                                     text
                                 }
                             </motion.button>
+                           </Link>
                         </div>
 
 
