@@ -5,6 +5,7 @@ import "react-native-web/dist"
 import Navbar from "@/src/components/ui/navbar";
 import Footer from "@/src/components/ui/footer";
 import { RootProvider } from "fumadocs-ui/provider/next";
+import { ThemeProvider } from 'next-themes';
 
 
 
@@ -30,16 +31,21 @@ export default async function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-        <RootProvider>
-        <Navbar/>
-          {children}
-        <Footer />
-        </RootProvider>
+
+        <ThemeProvider attribute='class'>
+
+          <RootProvider>
+            <Navbar />
+            {children}
+            <Footer />
+          </RootProvider>
+
+        </ThemeProvider>
 
       </body>
     </html>
