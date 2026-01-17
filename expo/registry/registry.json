@@ -61,6 +61,15 @@
                 "target": "components/ui"
             }
         ]
+    },
+    {
+        "name": "discrete-tab",
+        "files": [
+            {
+                "path": "components/discrete-tabs.tsx",
+                "target": "components/ui"
+            }
+        ]
     }
    
 ]
