@@ -10,9 +10,9 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
         <View className=" w-64 h-60 bg-black/5 rounded-2xl p-1">
             <View className="w-full h-full bg-white border border-neutral-300 rounded-[12px] flex items-center justify-center ">
                 <Text>
-                    <AntDesign name="warning" size={20} /> 
+                    <AntDesign name="warning" size={22} /> 
                 </Text>
-                <Text className="font-semibold">
+                <Text className="font-semibold my-1">
                     To your attention!
                 </Text>
                 <Text className="text-neutral-500 text-xl my-1">
