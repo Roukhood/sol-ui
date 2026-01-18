@@ -8,9 +8,9 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
         <View className=" w-64 h-60 bg-black/5 rounded-2xl p-1">
             <View className="w-full h-full bg-white border border-neutral-300 rounded-[12px] flex items-center justify-center ">
                 <Text>
-                    <AntDesign name="warning" size={22} /> 
+                    <AntDesign name="warning" size={23} /> 
                 </Text>
-                <Text className="font-semibold my-1">
+                <Text className="font-semibold text-[20px] my-1">
                     To your attention!
                 </Text>
                 <Text className="text-neutral-500 text-xl my-1">
@@ -24,7 +24,7 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
                             Accept
                         </Text>
                     </Pressable>
-                    <Pressable className="absolute top-1 h-full w-20 shadow-sm border border-black/5 bg-white px-3 rounded-md active:translate-x-[96px]">
+                    <Pressable className="absolute my-1 h-full w-20 shadow-sm border border-black/5 bg-white px-3 rounded-md active:translate-x-[96px]">
                         <View className="absolute inset-0 border-r border-black/50  right-10 top-1 bottom-1">
 
                         </View>
