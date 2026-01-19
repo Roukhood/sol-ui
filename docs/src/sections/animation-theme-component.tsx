@@ -6,16 +6,16 @@ import React, { useState } from "react";
 
 const demoUrl = [
   {
-    url: "https://sol-ui-krma.vercel.app/ButtonDemo",
+    url: "https://sol-ui-krma.vercel.app/demo/ButtonDemo",
   },
   {
-    url: "https://sol-ui-krma.vercel.app/InfoBadgeDemo",
+    url: "https://sol-ui-krma.vercel.app/demo/DiscreteTabsDemo",
   },
   {
-    url: "https://sol-ui-krma.vercel.app/ProfileCardDemo",
+    url: "https://sol-ui-krma.vercel.app/demo/ProfileCardDemo",
   },
   {
-    url: "https://sol-ui-krma.vercel.app/FilterDemo",
+    url: "https://sol-ui-krma.vercel.app/demo/FilterDemo",
   },
 ];
 function AnimationThemeComponent() {

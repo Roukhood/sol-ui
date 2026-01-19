@@ -13,7 +13,7 @@ import { SourceCode } from "@/src/components/ui/source-code";
   <Tab value="Preview">
     <ComponentPreview>
      <iframe
-                            src="https://sol-ui-krma.vercel.app/DiscreteTabsDemo"
+                            src="https://sol-ui-krma.vercel.app/demo/DiscreteTabsDemo"
                             width={400}
                             height={300}    
                         />
@@ -76,7 +76,7 @@ export default () => {
 <Tabs items={['CLI', 'Manual']}>
   <Tab value="CLI">
     ```bash
-    npm sol add discrete-tab
+    npx solui@latest add discrete-tab
     ```
   </Tab>
   <Tab value="Manual">
@@ -85,13 +85,13 @@ export default () => {
         ### Install dependencies
 
         ```bash
-        npm install nativewind 
+        npm install nativewind react-native-vector-icons
         ```
       </Step>
       <Step>
         ### Copy the code
 
-        Copy the code from the **Code** tab above into `components/ui/badge.tsx or components/ui/info-badge.tsx `.
+        Copy the code from the **Code** tab above into `components/ui/discrete-tab.tsx`.
       </Step>
       <Step>
         ### Update imports
@@ -104,4 +104,14 @@ export default () => {
 </Tabs>
 
 
+## Usage
+
+
+```tsx
+import DiscreteTabs from "@components/ui/discrete-Tabs";
+
+export default function DiscreteTabsDemo() {
+    return <DiscreteTabs />
+}
+```
 

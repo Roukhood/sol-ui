@@ -12,10 +12,10 @@ import { SourceCode } from "@/src/components/ui/source-code";
   <Tab value="Preview">
     <ComponentPreview>
      <iframe
-                            src="https://sol-ui-krma.vercel.app/PopCardDemo"
+                            src="https://sol-ui-krma.vercel.app/demo/PopCardDemo"
                             width={400}
                             height={600}
-                            className='col-span-1'
+                            
                         />
     </ComponentPreview>
   </Tab>
@@ -33,7 +33,7 @@ export default () => {
     const [pop, setPop] = useState(false)
     return (
         <View className="m-10">
-            <Pressable onPress={() => setPop((prev) => !prev)}>
+            <Pressable className="flex flex-row border border-black/10 px-3 py-1 items-center gap-2 rounded-md" onPress={() => setPop((prev) => !prev)}>
                 <Text className="text-4xl">
                     : 
                 </Text>
@@ -43,7 +43,7 @@ export default () => {
             </Pressable>
             {
                 pop && (
-                    <View className=" w-52 rounded-md  bg-violet-400  border border-neutral-300 shadow-md absolute  top-10 overflow-y-scroll ">
+                    <View className=" w-60 rounded-md  bg-violet-400  border border-neutral-300 shadow-md absolute  top-10 overflow-y-scroll ">
                         <View className="flex flex-row bg-neutral-100">
                             <TopPart icon={<Feather name="star" size={20}/>} />
                         </View>
@@ -56,37 +56,15 @@ export default () => {
                             <LabelButton title="Share" icon={<FontAwesome name="share" size={16} />} />
                             <LabelButton title="Setting" icon={< Ionicons name="settings-sharp" size={18} />} />
                         </View>
-                        <View>
-                        </View>
-                    </View>
+                    <View>
+                </View>
+            </View>
                 )
             }
         </View>
     )
 }
 
-export const LabelButton = ({ title, icon }: { title: string, icon?: React.ReactNode }) => {
-    return (
-        <Pressable className="p-2 active:bg-violet-200/20  ">
-            <View className="flex flex-row items-center gap-3 text-md font-normal  " >
-                <Text className="w-6">{icon}</Text>
-                <Text className="text-white font-medium"> {title}</Text>
-            </View>
-        </Pressable>
-    )
-}
-
-export const TopPart = ({ icon }: { icon: React.ReactNode }) => {
-    return (
-        <Pressable className="active:bg-neutral-200 p-3">
-            <Text>
-                {
-                    icon
-                }
-            </Text>
-        </Pressable>
-    )
-}
 `
   }/>
   </Tab>
@@ -98,7 +76,7 @@ export const TopPart = ({ icon }: { icon: React.ReactNode }) => {
 <Tabs items={['CLI', 'Manual']}>
   <Tab value="CLI">
     ```bash
-    npm sol add pop-card
+    npx solui@latest add pop-card
     ```
   </Tab>
   <Tab value="Manual">
@@ -130,7 +108,7 @@ export const TopPart = ({ icon }: { icon: React.ReactNode }) => {
 
 
 ```tsx
-import PopCard from "@/components/ui/pop-card";
+import PopCard from "@components/ui/pop-card";
 
 export default function PopCardDemo() {
     return <PopCard />;

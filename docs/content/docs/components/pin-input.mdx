@@ -202,7 +202,7 @@ export default ({ length = 4, onComplete  , autoFocus}: OTPInputProps) => {
       <Step>
         ### Copy the code
 
-        Copy the code from the **Code** tab above into `components/ui/badge.tsx or components/ui/info-badge.tsx `.
+        Copy the code from the **Code** tab above into `components/ui/pin-input.tsx`.
       </Step>
       <Step>
         ### Update imports
@@ -218,7 +218,7 @@ export default ({ length = 4, onComplete  , autoFocus}: OTPInputProps) => {
 
 
 ```tsx
-import PinInput  from "@/components/ui/pin-input";
+import PinInput  from "@components/ui/pin-input";
 
 export default function PinInputDemo() {
     return <PinInput length={4} onComplete={()=> "pin entered successfully" } />;
@@ -228,7 +228,7 @@ export default function PinInputDemo() {
 ## Auto complete pin input
 
 ```tsx
-import { AutoPin }  from "@/components/ui/pin-input";
+import { AutoPin }  from "@components/ui/pin-input";
 
 export default function PinInputDemo() {
     return <AutoPin length={4} onComplete={()=> "pin entered successfully" } />;

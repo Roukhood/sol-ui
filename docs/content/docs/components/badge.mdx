@@ -12,10 +12,10 @@ import { SourceCode } from "@/src/components/ui/source-code";
   <Tab value="Preview">
     <ComponentPreview>
      <iframe
-                            src="https://sol-ui-krma.vercel.app/InfoBadgeDemo"
+                            src="https://sol-ui-krma.vercel.app/demo/InfoBadgeDemo"
                             width={400}
                             height={300}
-                            className='col-span-1'
+                            
                         />
     </ComponentPreview>
   </Tab>
@@ -79,7 +79,7 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 <Tabs items={['CLI', 'Manual']}>
   <Tab value="CLI">
     ```bash
-    npm sol add badge
+    npx solui@latest add badge
     ```
   </Tab>
   <Tab value="Manual">
@@ -112,10 +112,10 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 
 ```tsx
 
-import { InfoBadge }  from "@/components/ui/infoBadge";
+import { InfoBadge }  from "@components/ui/infoBadge";
 
 export default function InfoBadgeDemo() {
-    return <InfoBadge task="Buy Coffee" />;
+    return <InfoBadge info="Buy Coffee" />;
 }
 ```
 
@@ -123,7 +123,7 @@ export default function InfoBadgeDemo() {
 ## Warning badge
 
 ```tsx
-import { WarningBadge }  from "@/components/ui/infoBadge";
+import { WarningBadge }  from "@components/ui/infoBadge";
 
 export default function InfoBadgeDemo() {
     return <WarningBadge title="Download again" />;
@@ -133,7 +133,7 @@ export default function InfoBadgeDemo() {
 ## Error badge
 
 ```tsx
-import { ErrorBadge }  from "@/components/ui/infoBadge";
+import { ErrorBadge }  from "@components/ui/infoBadge";
 
 export default function InfoBadgeDemo() {
     return <ErrorBadge title="User not found" />;
