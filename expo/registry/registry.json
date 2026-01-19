@@ -70,6 +70,15 @@
                 "target": "components/ui"
             }
         ]
+    },
+    {
+        "name": "pin-input",
+        "files": [
+            {
+                "path": "components/pin-input.tsx",
+                "target": "components/ui"
+            }
+        ]
     }
    
 ]
