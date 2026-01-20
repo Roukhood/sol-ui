@@ -1,67 +1,52 @@
 
-import React, { useState } from "react"
-import { View, Text, Pressable, TextInput } from "react-native"
-
+import React from "react"
+import { View, Text, Pressable } from "react-native"
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import Feather from 'react-native-vector-icons/Feather'
-export function InfoBadge({task = "Buy Coffee" } :{task : string}) {
-    const [save, setSave] = useState(true)
-    const [time, setTime] = useState(4)
-
-
-    function onSave() {
-
-        
-        setInterval(() => {
-
-            // setTime((el) =>  el - 1)
-
-            if (time == 0) {
-
-                setTime(4)
-            }
-        })
-
-
-    }
-
+export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
     return (
-        <View className=" min-w-80   bg-neutral-400  rounded-md ">
-            <View className="pt-4 px-4">
-                {/* <Text className="  font-medium flex gap-3 items-center"> {save ? <CircleArrowRight size={18} /> : <CircleArrowRight size={18} fill='green' />} {save ? 'save your changes' : 'changes saves'}  </Text> */}
-                <View className="">
-                    <Text className="py-1 font-medium text-white/90 ">{save ? "Selected Tasks" : "Task has been updated"}</Text>
+        <View className=" w-64 h-60 bg-black/5 rounded-2xl p-1">
+            <View className="w-full h-full bg-white border border-neutral-300 rounded-[12px] flex items-center justify-center ">
+                <Text>
+                    <AntDesign name="warning" size={23} /> 
+                </Text>
+                <Text className="font-semibold text-[20px] my-1">
+                    To your attention!
+                </Text>
+                <Text className="text-neutral-500 text-xl my-1">
                     {
-
-                        save &&
-                        <View>
-                            <Pressable className="bg-neutral-200 py-1 px-3 rounded-md"  >
-                                <Text className=" font-medium" >
-                                    {
-                                        task 
-                                    }
-                                </Text>
-                            </Pressable>
-                        </View>
+                        info
                     }
-
-                    <Pressable className="bg-slate-600 w-fit py-2 px-3 rounded-md my-2" onPress={() => { setSave((prev) => !prev); onSave() }}>
-                        <Text className="font-medium text-white">
-                            {
-                                save ? "Save" : "Undo"
-                            }
+                </Text>
+                <View className="w-48 bg-black/5 py-1 px-1  my-5 rounded-md mb-0 ">
+                    <Pressable className="relative bg-green-100/80 px-5 py-2 w-fit rounded-md flex flex-row justify-end  ">
+                        <Text className="font-semibold">
+                            Accept
                         </Text>
                     </Pressable>
+                    <Pressable className="absolute my-1 h-full w-20 shadow-sm border border-black/5 bg-white px-3 rounded-md active:translate-x-[96px]">
+                        <View className="absolute inset-0 border-r border-black/50  right-10 top-1 bottom-1">
+
+                        </View>
+                        <View className="absolute inset-0 border-r border-black/50  right-8 top-1 bottom-1">
+
+                        </View>
+                        <View className="absolute inset-0 border-r border-black/50  right-6 top-1 bottom-1">
+
+                        </View>
+                        <View className="absolute inset-0 border-r border-black/50  right-4 top-1 bottom-1">
+
+                        </View>
+                    </Pressable>
+
                 </View>
             </View>
-
-            {save ? '' : <View className="bg-neutral-200 h-8 mt-4 "> <Text className="w-full m-auto px-4">This Message close in {time} seconds</Text> </View>}
-
         </View>
     )
 }
 
 
-export function ErrorBadge({title = "User not found"}:{title : string}) {
+export function ErrorBadge({ title = "User not found" }: { title: string }) {
     return (
         <View className="w-48  border border-neutral-200 shadow-sm bg-red-200/50 h-14 py-2  flex items-center justify-center mx-auto rounded-md shadow-inherit">
             <View>
@@ -73,7 +58,7 @@ export function ErrorBadge({title = "User not found"}:{title : string}) {
 }
 
 
-export function WarningBadge({title = "download Again"} : {title : string}) {
+export function WarningBadge({ title = "download Again" }: { title: string }) {
     return (
         <View className="w-48 border border-neutral-200 shadow-sm bg-yellow-200/50 h-14 py-2  flex items-center justify-center mx-auto rounded-md shadow-inherit">
             <View>

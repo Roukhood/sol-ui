@@ -1,22 +1,19 @@
 import React, { useState } from "react";
 import { Pressable, View, Text } from "react-native";
-// import { cn } from "../../../../../packages/src/utils/cn";
-
-import Animated , * as Animate from 'react-native-reanimated'
-
-
+import AntDesign from 'react-native-vector-icons/AntDesign'
 
 
 
 type FilterButtons = {
     icon?: React.ReactNode;
     label: string;
+    onRemove?: () => void;
 }
 
 type AddFilters = {
     icon?: React.ReactNode;
-    label: string
-
+    label: string;
+    onAdd?: () => void;
 }
 
 interface FilterProps {
@@ -27,79 +24,143 @@ interface FilterProps {
 
 export function Filter({ filterButtons, addFilters }: FilterProps) {
     const [filter, setFilter] = useState(false)
+    const [selectedFilters, setSelectedFilters] = useState<AddFilters[]>([])
+    const [selectedButtonFilters, setSelectedButtonFilters] = useState<FilterButtons[]>([])
 
-   
+    const handleAddFilter = (item: AddFilters) => {
+        setSelectedFilters([...selectedFilters, item])
+        setFilter(false)
+    }
+
+    const handleAddButtonFilter = (item: FilterButtons) => {
+        setSelectedButtonFilters([...selectedButtonFilters, item])
+    }
+
+    const handleRemoveFilter = (index: number) => {
+        setSelectedFilters(selectedFilters.filter((_, i) => i !== index))
+    }
+
+    const handleRemoveButtonFilter = (index: number) => {
+        setSelectedButtonFilters(selectedButtonFilters.filter((_, i) => i !== index))
+    }
+
+
     return (
-        <View className="h-40 w-80 shadow-md rounded-xl m-10 border ">
-            < Text className="p-4 font-bold flex gap-2 items-center">
-                Applied Filters 
-                {/* <FilterIcon size={15} fill='black'/> */}
+        <View className="h-fit pb-5 w-80 shadow-md rounded-xl m-10 border ">
+            < Text className="p-4 font-bold flex flex-row items-center  gap-4">
+                <Text > Apply filter</Text>
+                <AntDesign name="filter" size={15} />
             </Text>
 
 
-            <View className="flex flex-row gap-2 m-2">
+            <View className="flex flex-row gap-2 m-2 items-center flex-wrap">
                 {
                     filterButtons.map((el, id) => (
-                        <FilterButton key={id} label={el.label} icon={el.icon} />
+                        <FilterButton 
+                            key={id} 
+                            label={el.label} 
+                            icon={el.icon}
+                            onRemove={() => handleAddButtonFilter(el)}
+                        />
+                    ))
+                }
+                {
+                    selectedButtonFilters.map((el, id) => (
+                        <FilterButton 
+                            key={`button-${id}`} 
+                            label={el.label} 
+                            icon={el.icon} 
+                            onRemove={() => handleRemoveButtonFilter(id)}
+                        />
+                    ))
+                }
+                {
+                    selectedFilters.map((el, id) => (
+                        <FilterButton 
+                            key={`selected-${id}`} 
+                            label={el.label} 
+                            icon={el.icon} 
+                            onRemove={() => handleRemoveFilter(id)}
+                        />
                     ))
                 }
 
                 <View className="">
-                    <Pressable onPress={() => setFilter((prev) => !prev)} className='bg-red-300 p-2 size-8 flex items-center justify-center rounded-md'
-                    //     filter ? "bg-red-300" : "bg-green-300"
-                    // )}
+                    <Pressable onPress={() => setFilter((prev) => !prev)} className={`bg-black text-white size-8 flex items-center justify-center rounded-md '
+                        ${filter ? "bg-black/80" : "bg-black "}
+                    `}
                     >
-                        {
-                            addFilters.length > 0 ?  "x" : '+'  
-                        }
+                        <Text className="m-auto text-white">
+                            {
+                                filter ? 'X' : '+'
+                            }
+                        </Text>
                     </Pressable>
 
-                    {addFilters.length > 0 && filter && <View className="shadow-md bg-white min-w-28 absolute left-10 top-2 rounded-md p-1">
+                    {addFilters.length > 0 && filter && <View className="w-20 shadow-md bg-white min-w-28 absolute left-10 top-2 rounded-md p-1 gap-2">
                         {
                             addFilters.map((el, id) => (
-                                <AddFilter label={el.label} />
+                                <AddFilter 
+                                    key={id} 
+                                    label={el.label} 
+                                    icon={el.icon}
+                                    onAdd={() => handleAddFilter(el)}
+                                />
                             ))
                         }
-
 
                     </View>}
                 </View>
             </View>
-
-
-
-
-
-
         </View>
     )
 }
 
 
-export const FilterButton = ({ label, icon }: FilterButtons) => {
-   
+export const FilterButton = ({ label, icon, onRemove }: FilterButtons) => {
+    const [lastTap, setLastTap] = useState(0)
+
+    const handlePress = () => {
+        const now = Date.now()
+        const delta = now - lastTap
+        
+        // Double tap: 300ms between taps
+        if (delta < 300 && onRemove) {
+            onRemove()
+        }
+        setLastTap(now)
+    }
+
     return (
-        <Pressable className="bg-violet-300/40  py-2 px-3 rounded-md h-fit ">
-           <Text   className="flex items-center gap-1 mx-auto" 
-           >{icon}{label}</Text>
+        <Pressable 
+            onPress={handlePress}
+            className="border border-black/10  py-2 px-6 rounded-md h-fit flex flex-row items-center gap-2"
+        >
+            <Text className="flex items-center gap-1">
+                <Text>{icon}</Text>
+                {label}
+            </Text>
         </Pressable>
     )
 }
 
-export const AddFilter = ({ label, icon }: AddFilters) => {
+export const AddFilter = ({ label, icon, onAdd }: AddFilters) => {
     return (
-        <View className="flex flex-row items-center gap-1 justify-between active:bg-violet-300/30 p-2 rounded-md">
+        <Pressable 
+            onPress={onAdd}
+            className="w-30 flex flex-row items-center gap-1 justify-between  p-2 rounded-md border border-black/10 active:bg-black/5 "
+        >
             <Text>
                 {
                     icon
                 }
             </Text>
-            <Text className=" ">
+            <Text className="">
                 {
                     label
                 }
             </Text>
-            <Pressable className="">+</Pressable>
-        </View>
+            <Text className="text-lg font-bold">+</Text>
+        </Pressable>
     )
 }
