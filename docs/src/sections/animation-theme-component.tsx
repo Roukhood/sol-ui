@@ -21,7 +21,7 @@ const demoUrl = [
   {
     docsUrl: "/docs/filter",
     demoUrl: "https://sol-ui-krma.vercel.app/demo/FilterDemo",
-    className: "col-span-2"
+    className: "md:col-span-2"
   },
 ];
 function AnimationThemeComponent() {
