@@ -1,0 +1,133 @@
+---
+title: Card
+description: Showcase your Information in better way.
+---
+
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { ComponentPreview } from "@/src/components/ui/component-preview";
+import { SourceCode } from "@/src/components/ui/source-code";
+
+
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+     <iframe
+                            src="https://sol-ui-krma.vercel.app/demo/CardDemo"
+                            width={300}
+                            height={300} 
+                        />
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+  <SourceCode content={ 
+    `
+import React from "react";
+import { View, Text, Pressable } from "react-native";
+
+export const Card = ({children} : {children : React.ReactNode}) => {
+    return (
+        <View className="w-64 h-fit  bg-white border border-black/30 rounded-3xl overflow-hidden">
+            {
+                children
+            }
+        </View>
+    )
+}
+
+export const CardHeader = ({children} : {children : React.ReactNode}) => {
+    return (
+        <View className="w-full h-16 bg-black/5 overflow-hidden border-b border-neutral-300">
+            <Text className="text-2xl font-medium m-5">
+                {
+                    children
+                }
+            </Text>
+        </View>
+    )
+}
+
+export const CardBody = ({children } : {children : React.ReactNode}) =>{
+    return(
+        <View className="m-5 ">
+            <Text className="text-neutral-500">
+               {
+                children
+               }
+            </Text>
+        </View>
+    )
+}
+
+export const CardButton = ({children} : {children : React.ReactNode}) =>{
+    return(
+        <Pressable className="py-1 px-3  border border-neutral-200 rounded-md m-5 mb-0 w-20">
+            <Text className="text-center">
+                {
+                    children
+                }
+            </Text>
+        </Pressable>
+    )
+}
+`
+     
+  }/>
+  </Tab>
+</Tabs>
+
+
+
+## Installation
+
+<Tabs items={['CLI', 'Manual']}>
+  <Tab value="CLI">
+    ```bash
+    npx solui@latest add card
+    ```
+  </Tab>
+  <Tab value="Manual">
+    <Steps>
+      <Step>
+        ### Install dependencies
+
+        ```bash
+        npm install nativewind
+        ```
+      </Step>
+      <Step>
+        ### Copy the code
+
+        Copy the code from the **Code** tab above into `components/ui/card.tsx `.
+      </Step>
+      <Step>
+        ### Update imports
+
+        Update the imports to match your project structure.
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+
+## Usage
+
+
+## Card
+
+```tsx
+import { Card, CardBody, CardButton, CardHeader } from '@components/ui/card';
+
+export default function CardDemo() {
+    return 
+      <Card>
+        <CardHeader>hi</CardHeader>
+        <CardButton>hi</CardButton>
+        <CardBody>hii</CardBody>
+      </Card>;
+}
+```
+
