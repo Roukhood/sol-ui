@@ -7,6 +7,7 @@ import { Button } from '../components/ui/button';
 import { Filter } from '../components/ui/filter';
 import { ProfileCard } from '../components/ui/profile-card';
 import { Login } from '../components/ui/login';
+import MoneyCheckout from '../components/ui/money-checkout';
 
 
 const HomeScreen = () => {
@@ -21,9 +22,9 @@ const HomeScreen = () => {
 
       {/* <ProfileCard src="../../src/assests/imagr7.jpg" subTitle='@sol-auth' title='Satish' /> */}
 
+      <MoneyCheckout money={600} nameOfReceiver='Satish Solera'/>
 
-
-  {/* <Login fields={[{label: "abx" , name: "abx" , placeholder:"placeholderjjaj"}]} mode='signup' socialProviders={[{label:"abc"}]}/> */}
+      {/* <Login fields={[{label: "abx" , name: "abx" , placeholder:"placeholderjjaj"}]} mode='signup' socialProviders={[{label:"abc"}]}/> */}
     </View>
   )
 }

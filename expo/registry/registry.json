@@ -88,6 +88,16 @@
                 "target": "components/ui"
             }
         ]
+    },
+    
+    {
+        "name": "money-checkout",
+        "files": [
+            {
+                "path": "components/money-checkout.tsx",
+                "target": "components/ui"
+            }
+        ]
     }
-   
+
 ]

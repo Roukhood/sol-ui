@@ -8,7 +8,7 @@ export default function Layout() {
     return <Tabs>
         <Tabs.Screen name="index" options={{
             headerShown: false,
-            tabBarLabel: 'Home',
+            tabBarShowLabel : false,
             tabBarIcon: ({ color }) => <AntDesign name="home" size={24} color="black" />
         }} />
        
