@@ -7,6 +7,8 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
+import  {APITable } from '@/src/components/docs/api-table';
+
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -241,3 +243,59 @@ export default function FilterDemo() {
           />
 }
 ```
+
+
+## Props
+
+## AddFilter Props
+
+<APITable
+  data={[
+    {
+      prop: "icon",
+      type: "React.ReactNode",
+      defaultValue: "''",
+      description: "Adding icons in addFilters UI"
+    },
+    {
+      prop: "label",
+      type: "string",
+      defaultValue: "''",
+      description: "Adding labels in addFilters UI"
+    },
+    {
+      prop: "onAdd",
+      type: "() => void",
+      defaultValue: "''",
+      description: "Adding method in addFilters UI"
+    },
+  ]}
+/>
+
+
+## FilterButtons Props
+
+<APITable
+  data={[
+    {
+      prop: "icon",
+      type: "React.ReactNode",
+      defaultValue: "''",
+      description: "Adding icons in addFilters UI"
+    },
+    {
+      prop: "label",
+      type: "string",
+      defaultValue: "''",
+      description: "Adding labels in FilterButton UI"
+    },
+    {
+      prop: "onRemove",
+      type: "() => void",
+      defaultValue: "''",
+      description: "Remove method in FilterButton UI"
+    },
+  ]}
+/>
+
+

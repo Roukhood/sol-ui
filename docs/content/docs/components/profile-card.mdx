@@ -7,6 +7,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
+import  {APITable } from '@/src/components/docs/api-table'
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -102,3 +103,33 @@ export default function ProfileCardDemo() {
     return <ProfileCard src="image.jpg" subTitle='@sol-auth' title='Satish' />
 }
 ```
+## Props
+
+<APITable
+  data={[
+    {
+      prop: "src",
+      type: "string",
+      defaultValue: "''",
+      description: "showing Image on profile"
+    },
+    {
+      prop: "title",
+      type: "string",
+      defaultValue: "''",
+      description: "Title on profile"
+    },
+    {
+      prop: "subTitle",
+      type: "string",
+      defaultValue: "''",
+      description: "subTitle on profile"
+    },
+    {
+      prop: "buttonLabel",
+      type: "string",
+      defaultValue: "Added",
+      description: "Button label for profile"
+    },
+  ]}
+/>

@@ -6,10 +6,11 @@ import { motion } from "motion/react";
 
 const demoUrl = [
   {
-
-    docsUrl: "/docs/button",
-    demoUrl: "https://sol-ui-krma.vercel.app/demo/ButtonDemo",
+    docsUrl: "/docs/filter",
+    demoUrl: "https://sol-ui-krma.vercel.app/demo/MoneyCheckoutDemo",
+    className: " "
   },
+ 
   {
     docsUrl: "/docs/discrete-tabs",
     demoUrl: "https://sol-ui-krma.vercel.app/demo/DiscreteTabsDemo",
@@ -26,6 +27,11 @@ const demoUrl = [
     docsUrl: "/docs/filter",
     demoUrl: "https://sol-ui-krma.vercel.app/demo/FilterDemo",
     className: " h-[400px] md:col-span-2"
+  },
+   {
+
+    docsUrl: "/docs/button",
+    demoUrl: "https://sol-ui-krma.vercel.app/demo/ButtonDemo",
   },
 ];
 function AnimationThemeComponent() {

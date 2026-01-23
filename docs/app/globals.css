@@ -153,6 +153,7 @@
 
 .list:nth-child(2):hover{
  font-size: 35px;
+ font-weight: bold;
 }
 
 .list:nth-child(3):hover{

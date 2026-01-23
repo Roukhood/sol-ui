@@ -6,8 +6,7 @@ import Navbar from "@/src/components/ui/navbar";
 import Footer from "@/src/components/ui/footer";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import { ThemeProvider } from 'next-themes';
-
-
+import { siteConfig } from "./config/site";
 
 
 const geistSans = Geist({
@@ -21,8 +20,26 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Sol-ui",
-  description: "Make Your Android Screens Better with sol-ui",
+   title: {
+    default: siteConfig.name,
+    template: `%s | ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: [
+    "React",
+    "Next.js",
+    "React Native UI",
+    "Tailwind CSS",
+    "solUI",
+    "React Aria",
+    "Server Components",
+    "React Components",
+    "UI Components",
+    "UI Kit",
+    "UI Library",
+    "UI Framework",
+    "UI Design System",
+  ],
 };
 
 export default async function RootLayout({

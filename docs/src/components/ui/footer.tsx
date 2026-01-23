@@ -54,7 +54,7 @@ function Footer() {
                             </motion.div>
                         </Link>
 
-                     
+
                     </div>
 
                 </div>
@@ -76,23 +76,24 @@ export const ScheduleCall = () => {
             </button>
             <p className='text-black dark:text-white py-3'>
                 <b>Have a Project ? </b> <br />
-                <span className='text-neutral-400'>we  would love to hear from you</span>
+                <span className='text-neutral-500'>we  would love to hear from you</span>
             </p>
-            <Link  href="https://cal.com/satish-solera-vcuclh/15min">
-            <motion.button
-                initial={{
-                    scale: 1,
+            <Link href="https://cal.com/satish-solera-vcuclh/15min">
+                <motion.button
+                    initial={{
+                        scale: 1,
 
-                }}
-                whileHover={{
-                    scale: 1.04
-                }}
-                transition={{
-                    duration: 0.3
-                }}
-                className='absolute bottom-0 right-0 size-15  dark:text-white text-black  rounded-lg z-20 cursor-pointer'>
-                <IconArrowBadgeLeft size={50} className='rotate-130 flex items-center justify-center mx-auto ' />
-            </motion.button>
+                    }}
+                    whileHover={{
+                        scale: 1.04
+                    }}
+                    transition={{
+                        duration: 0.3
+                    }}
+                    name='call-button'
+                    className='absolute bottom-0 right-0 size-15  dark:text-white text-black  rounded-lg z-20 cursor-pointer'>
+                    <IconArrowBadgeLeft size={50} className='rotate-130 flex items-center justify-center mx-auto ' />
+                </motion.button>
             </Link>
             <div className='absolute bottom-0 right-0 size-15  p-8 shadow-sm ring-1 ring-black/30 dark:ring-neutral-500  z-10'
                 style={{
@@ -108,24 +109,24 @@ export const ScheduleCall = () => {
 export const SocialLink = () => {
     return (
         <div className="grid grid-cols-2  mx-auto gap-2">
-            <div className="size-40  py-0.5 px-3 rounded-[5px]   flex items-center justify-center">
+            <div className="size-40  py-0.5 px-3 rounded-[5px]  flex items-center justify-center">
                 <ul className='w-sm h-fit py-5 px-10 '>
-                    <Link href='/docs/introduction'>
-                        <li className={cn('list text-xl font-semibold  ')}>
+                    < li className={cn('list text-xl font-semibold  ')}>
+                        <Link href='/docs/introduction'>
                             docs
-                        </li>
-                    </Link>
-                    <Link href='https://x.com/SatishSolera'>
-                        <li className='list text-xl '>
+                        </Link>
+                    </li>
+                    <li className='list text-xl '>
+                        <Link href='https://x.com/SatishSolera'>
                             Twitter
-                        </li>
-                    </Link>
+                        </Link>
+                    </li>
                 </ul>
             </div>
             <div
 
                 className="size-40 shadow ring-1 ring-neutral-200 py-0.5 px-3 rounded-[5px] bg-white ">
-                <Link href='https://github.com/satish-solera/sol-ui'>
+                <Link href='https://github.com/satish-solera/sol-ui' >
                     <motion.div className="w-full h-full flex items-center justify-center cursor-pointer"
                         initial={{
                             scale: 1,
@@ -145,7 +146,7 @@ export const SocialLink = () => {
             </div>
             <div className=""></div>
             <div className="w-40 h-20 shadow ring-1 ring-neutral-200 py-0.5 px-3 rounded-[5px] bg-white flex items-center justify-center p-0.5">
-                <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+                <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" width={100} height={40} alt='buymeacoffee' /></a>
             </div>
 
             {/* <div className="size-40 shadow ring-1  ring-black/10 py-0.5  rounded-[5px] bg-white text-black flex items-center justify-center">
@@ -176,9 +177,9 @@ export const BottomFooter = () => {
                 })
             }
 
-               <div className="w-28 md:hidden block  items-center  py-px">
-                            <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
-                        </div>
+            <div className="w-28 md:hidden block  items-center  py-px">
+                <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" /></a>
+            </div>
         </div>
     )
 }

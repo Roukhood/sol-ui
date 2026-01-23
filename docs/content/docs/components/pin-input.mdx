@@ -7,8 +7,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
-
-
+import  {APITable } from '@/src/components/docs/api-table'
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -234,3 +233,31 @@ export default function PinInputDemo() {
     return <AutoPin length={4} onComplete={()=> "pin entered successfully" } />;
 }
 ```
+
+
+## Props
+
+
+<APITable
+  data={[
+    {
+      prop: "length",
+      type: "number",
+      defaultValue: "4",
+      description: "It is length of Inputs for pin"
+    },
+    {
+      prop: "onComplete",
+      type: "() =>",
+      defaultValue: "''",
+      description: "Method for onComplete activity"
+    },
+    {
+      prop: "autoFocus",
+      type: "boolean",
+      defaultValue: "true",
+      description: "sets autoFocus for inputs"
+    },
+  ]}
+/>
+

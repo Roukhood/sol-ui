@@ -8,7 +8,7 @@ import { Tab, Tabs } from "fumadocs-ui/components/tabs";
 import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
-
+import  {APITable } from '@/src/components/docs/api-table'
 
 
 <Tabs items={["Preview", "Code"]}>
@@ -144,4 +144,18 @@ export default function CardDemo() {
      </Card>;
 }
 ```
+
+## Props
+
+<APITable
+  data={[
+    {
+      prop: "children",
+      type: "React.ReactNode",
+      defaultValue: "''",
+      description: "Adding children in card body"
+    },
+  ]}
+/>
+
 
