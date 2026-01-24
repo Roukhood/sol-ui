@@ -1,4 +1,4 @@
-import type {IconSvgProps} from "@/types";
+import type {IconSvgProps} from "../../../components/types";
 
 export const StarIcon = ({size = 24, width, height, fill = "none", ...props}: IconSvgProps) => (
   <svg

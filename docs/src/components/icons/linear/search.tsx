@@ -1,4 +1,4 @@
-import type {IconSvgProps} from "@/types";
+import type {IconSvgProps} from "../../../components/types";
 
 export const SearchLinearIcon = ({
   size = 24,

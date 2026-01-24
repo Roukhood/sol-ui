@@ -1,4 +1,4 @@
-import type {IconSvgProps} from "@/types";
+import type {IconSvgProps} from "../../../components/types";
 
 export const RelumeLogo = ({width = 152, height = 56, ...props}: IconSvgProps) => (
   <svg fill="none" height={height} width={width} xmlns="http://www.w3.org/2000/svg" {...props}>

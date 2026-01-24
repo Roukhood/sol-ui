@@ -1,4 +1,4 @@
-import type {IconSvgProps} from "@/types";
+import type {IconSvgProps} from "../../../components/types";
 
 export const TickBoldIcon = ({size = 24, width, height, ...props}: IconSvgProps) => (
   <svg
