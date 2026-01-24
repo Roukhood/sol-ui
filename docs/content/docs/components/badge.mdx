@@ -8,6 +8,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
 import  {APITable } from '@/src/components/docs/api-table'
+import { PackageManagers } from "@/src/components/docs/package-manager";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -77,11 +78,20 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 
 ## Installation
 
-<Tabs items={['CLI', 'Manual']}>
-  <Tab value="CLI">
-    ```bash
-    npx solui@latest add badge
-    ```
+<Tabs items={['Command', 'Manual']}>
+  <Tab value="Command">
+
+    
+<PackageManagers
+  showGlobalInstallWarning
+  commands={{
+    cli: "npx solui@latest add badge",
+    npm: "npm install badge",
+    yarn: "yarn add badge",
+    pnpm: "pnpm add badge",
+    bun: "bun add badge"
+  }}
+/>
   </Tab>
   <Tab value="Manual">
     <Steps>

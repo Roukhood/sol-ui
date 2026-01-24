@@ -41,8 +41,8 @@ function Hero() {
           </Link>
         </div>
         <SolUIInitCopy
-          className="w-40 px-4 py-[9px] flex items-center text-center rounded-lg"
-          code="npm init"
+          className="w-40 px-4 py-[9px] flex items-center text-center rounded-lg font-medium"
+          code="npm i solui"
         />
       </div>
     </div>

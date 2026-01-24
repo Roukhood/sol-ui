@@ -81,12 +81,7 @@ export const PackageManagers = ({
 
                 {availableManagers.map(({ name }) => (
                     <TabsContent key={name} value={name}>
-                        {/* <CodeBlock content={commands[name] as string} /> */}
-                        {/* <CodeBlock title="abx" lang="bash" allowCopy={true}  >
-                            {
-                                commands[name] 
-                            }
-                        </CodeBlock> */}
+                        
                         <DynamicCodeBlock 
 lang="bash"
 code={commands[name] as string}
@@ -96,15 +91,7 @@ code={commands[name] as string}
                 ))}
             </Tabs>
 
-            {showGlobalInstallWarning && (
-                <div className="my-2 text-sm text-orange-700 bg-orange-50 p-3 rounded-md border border-orange-200">
-                    The above command is for individual installation only. You may skip this step if{" "}
-                    <code className="px-1 py-0.5 text-xs font-mono bg-orange-100 rounded">
-                        @heroui/react
-                    </code>{" "}
-                    is already installed globally.
-                </div>
-            )}
+            
         </>
     );
 };

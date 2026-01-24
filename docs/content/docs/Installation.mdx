@@ -5,8 +5,6 @@ description: How to get started with solUI in your project.
 
 import { PackageManagers } from "@/src/components/docs/package-manager";
 
-
-
 # Installation
 
 - **Expo / React Native** (Recommended)
@@ -16,11 +14,9 @@ import { PackageManagers } from "@/src/components/docs/package-manager";
 
 Using the CLI is now the easiest way to start a solUI project. You can initialize your project and add components directly via the CLI:
 
-### Installation 
+### Installation
+
 Execute one of the following commands in your terminal:
-```bash
- npm install -g solui
-```
 
 <PackageManagers
   commands={{
@@ -31,6 +27,47 @@ Execute one of the following commands in your terminal:
   }}
 />
 
+### Initialization and Starting the App
+
+Initialize the project by using the `init` command.
+
+```bash
+heroui init my-heroui-app
+```
+
+Install the dependencies to start the local server:
+
+<PackageManagers
+  commands={{
+    npm: "cd solui-app && npm install",
+    yarn: "cd solui-app && yarn install",
+    pnpm: "cd solui-app && pnpm install",
+    bun: "cd solui-app && bun install",
+  }}
+/>
+
+Start the local server:
+
+<PackageManagers
+  commands={{
+    npm: "npm run dev",
+    yarn: "yarn run dev",
+    pnpm: "pnpm run dev",
+    bun: "bun run dev",
+  }}
+/>
+
+### Adding the Components
+
+Once your solUI project is ready to develop, you can add individual components using the CLI. For example, to add a button component:
+
+```bash
+solui add button
+```
+
+## Manual Installation
+
+If you prefer not to use the CLI, you may try individual installation to set up solUI in your project:
 
 Most components rely on `nativewind` for CSS and `react-native-vector-icons` for a Icons Library. Run the following command in your terminal:
 
@@ -38,22 +75,14 @@ Most components rely on `nativewind` for CSS and `react-native-vector-icons` for
 npm install nativewind react-native-vector-icons
 ```
 
-## start server
-
-Install the dependencies to start the local server:
-```
-npm: "npm run dev",
-```
-
-
-### Adding the Components
-Once your solUI project is ready to develop, you can add individual components using the CLI. For example, to add a button component:
-
-```bash
-solui add button
-```
-
-
+<PackageManagers
+  commands={{
+    npm: "npm install nativewind react-native-vector-icons n",
+    yarn: "yarn add nativewind react-native-vector-icons ",
+    pnpm: "pnpm add nativewind react-native-vector-icons ",
+    bun: "bun add nativewind react-native-vector-icons ",
+  }}
+/>
 
 1. Browse the [Components](/docs/components/badge).
 2. Click on the component you want to use.
