@@ -8,6 +8,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
 import  {APITable } from '@/src/components/docs/api-table'
+import { PackageManagers } from "@/src/components/docs/package-manager";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -65,20 +66,31 @@ export default ({ src, title, subTitle, buttonLabel = "Added" }: Profile) =>{
 
 ## Installation
 
-<Tabs items={['CLI', 'Manual']}>
-  <Tab value="CLI">
-    ```bash
-    npx solui@latest add profile-card
-    ```
+<Tabs items={['Command', 'Manual']}>
+  <Tab value="Command">
+
+    
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add profile-card",
+   
+  }}
+/>
   </Tab>
   <Tab value="Manual">
     <Steps>
       <Step>
         ### Install dependencies
 
-        ```bash
-        npm install nativewind
-        ```
+        <PackageManagers
+  commands={{
+    npm: "npm install  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    yarn: "yarn add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    pnpm: "pnpm add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    bun: "bun add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+  }}
+/>
       </Step>
       <Step>
         ### Copy the code
@@ -97,7 +109,7 @@ export default ({ src, title, subTitle, buttonLabel = "Added" }: Profile) =>{
 ## Usage
 
 ```tsx
-import  ProfileCard  from "@components/ui/profile-card";
+import  ProfileCard  from "@/components/ui/profile-card";
 
 export default function ProfileCardDemo() {
     return <ProfileCard src="image.jpg" subTitle='@sol-auth' title='Satish' />

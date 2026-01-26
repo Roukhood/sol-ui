@@ -58,7 +58,6 @@ function Footer() {
                     </div>
 
                 </div>
-
                 <BottomFooter />
             </div>
         </footer>
@@ -72,7 +71,11 @@ export const ScheduleCall = () => {
     return (
         <div className="relative h-64 w-72 bg-white dark:bg-black/50 rounded-2xl shadow-sm ring-1 ring-black/10 dark:ring-neutral-500 px-5  py-5 mx-auto">
             <button className="py-2 px-4 rounded-md  shadow-sm shadow-white dark:shadow-black/10 ring-1 ring-black/10 dark:ring-neutral-500 dark:text-white text-black flex gap-2 items-center">
-                <div className='size-2 dark:bg-white bg-black rounded-full'></div>  Schedule a Call
+                {/* <div className='animate-pulse size-2 dark:bg-white bg-black rounded-full'></div>  
+                */}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-emerald-500 fill-emerald-500 rotate-180 animate-pulse"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" /></svg>
+                        <span className=" text-neutral-500  "> Schedule a Call</span>
+
             </button>
             <p className='text-black dark:text-white py-3'>
                 <b>Have a Project ? </b> <br />
@@ -149,19 +152,14 @@ export const SocialLink = () => {
                 <a href="https://www.buymeacoffee.com/satishsolen"><img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" width={100} height={40} alt='buymeacoffee' /></a>
             </div>
 
-            {/* <div className="size-40 shadow ring-1  ring-black/10 py-0.5  rounded-[5px] bg-white text-black flex items-center justify-center">
-              <Link href="">
-                <motion.button className='dark:bg-neutral-100 py-2 px-3 rounded-md ring-1 dark:ring-black/30 ring-neutral-500 cursor-pointer'>Become Sponcer</motion.button>
-
-                </Link>
-            </div> */}
+           
         </div>
     )
 }
 
 export const BottomFooter = () => {
     return (
-        <div className="flex gap-2">
+        <div className="flex gap-2 ml-[23.5px]">
             {
                 [{ label: "2026", href: "/" }, { label: "sol-auth", href: "https://github.com/satish-solera/sol-auth" }].map((el, id) => {
                     return (

@@ -8,6 +8,7 @@ import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
 import  {APITable } from '@/src/components/docs/api-table'
+import { PackageManagers } from "@/src/components/docs/package-manager";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -77,20 +78,31 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 
 ## Installation
 
-<Tabs items={['CLI', 'Manual']}>
-  <Tab value="CLI">
-    ```bash
-    npx solui@latest add badge
-    ```
+<Tabs items={['Command', 'Manual']}>
+  <Tab value="Command">
+
+    
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add badge",
+   
+  }}
+/>
   </Tab>
   <Tab value="Manual">
     <Steps>
       <Step>
         ### Install dependencies
 
-        ```bash
-        npm install nativewind react-native-vector-icons
-        ```
+       <PackageManagers
+  commands={{
+    npm: "npm install  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    yarn: "yarn add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    pnpm: "pnpm add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    bun: "bun add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+  }}
+/>
       </Step>
       <Step>
         ### Copy the code
@@ -113,7 +125,7 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 
 ```tsx
 
-import { InfoBadge }  from "@components/ui/infoBadge";
+import { InfoBadge }  from "@/components/ui/infoBadge";
 
 export default function InfoBadgeDemo() {
     return <InfoBadge info="Buy Coffee" />;
@@ -124,7 +136,7 @@ export default function InfoBadgeDemo() {
 ## Warning badge
 
 ```tsx
-import { WarningBadge }  from "@components/ui/WarningBadge";
+import { WarningBadge }  from "@/components/ui/WarningBadge";
 
 export default function InfoBadgeDemo() {
     return <WarningBadge title="Download again" />;
@@ -134,7 +146,7 @@ export default function InfoBadgeDemo() {
 ## Error badge
 
 ```tsx
-import { ErrorBadge }  from "@components/ui/ErrorBadge";
+import { ErrorBadge }  from "@/components/ui/ErrorBadge";
 
 export default function InfoBadgeDemo() {
     return <ErrorBadge title="User not found" />;

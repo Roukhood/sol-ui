@@ -53,14 +53,13 @@ export default async function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-
         <ThemeProvider attribute='class'>
 
-          <RootProvider>
             <Navbar />
+          <RootProvider>
             {children}
-            <Footer />
           </RootProvider>
+            <Footer />
 
         </ThemeProvider>
 
