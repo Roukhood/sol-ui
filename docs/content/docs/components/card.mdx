@@ -15,11 +15,19 @@ import { PackageManagers } from "@/src/components/docs/package-manager";
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
     <ComponentPreview>
-     <iframe
-                            src="https://sol-ui-krma.vercel.app/demo/CardDemo"
-                            width={300}
-                            height={500} 
-                        />
+    
+
+                         <iframe
+          
+            className="w-[325px] h-[600px] overflow-hidden rounded-2xl shadow-[0px_0px_30px_0px_rgba(38,38,38,0.10)]"
+            src="https://sol-ui-krma.vercel.app/demo/CardDemo"
+            title="InfoBadge demo"
+            style={{
+              transformOrigin: '0px 0px',
+              // transform: "",
+            }}
+            loading="lazy"
+          />
     </ComponentPreview>
   </Tab>
   <Tab value="Code">

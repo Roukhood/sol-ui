@@ -62,11 +62,22 @@ export default AnimationThemeComponent;
 
 export const ComponentCard = ({ demoSrc , className}: { demoSrc: string , className ?: string}) => {
   return (
-      <div className={cn("h-[600px] w-full flex items-center justify-center" , className)}>
-        <iframe
-          src={demoSrc}
-          className={cn(" h-full w-full flex items-center justify-center m-auto  rounded-[15px] p-0.5 ring-1 ring-black/10 " )}
-        ></iframe>
+      <div className={cn("h-[600px] w-full flex items-center justify-center relative" , className)}>
+{/*          
+      //     src={demoSrc}
+      //     className={cn(" h-full w-full flex items-center justify-center m-auto  rounded-[15px] p-0.5 ring-1 ring-black/10 " )}
+      //   ></iframe> */}
+
+          <iframe
+            className={cn("w-[325px] h-[600px] overflow-hidden rounded-2xl shadow-[0px_0px_30px_0px_rgba(38,38,38,0.10)]" , className)}
+            src={demoSrc}
+            title="InfoBadge demo"
+            style={{
+              transformOrigin: '0px 0px',
+              // transform: "",
+            }}
+            loading="lazy"
+          />
       </div>
   );
 };
