@@ -47,10 +47,13 @@ export function Filter({ filterButtons, addFilters }: FilterProps) {
 
     return (
         <View className="h-fit pb-5 w-80 shadow-md rounded-xl m-10 border ">
-            < Text className="p-4 font-bold flex flex-row items-center  gap-4">
+           <View>
+             < Text className="p-4 font-bold flex flex-row items-center  gap-4">
                 <Text > Apply filter</Text>
                 <AntDesign name="filter" size={15} />
             </Text>
+               
+           </View>
 
 
             <View className="flex flex-row gap-2 m-2 items-center flex-wrap">
@@ -97,7 +100,7 @@ export function Filter({ filterButtons, addFilters }: FilterProps) {
                         </Text>
                     </Pressable>
 
-                    {addFilters.length > 0 && filter && <View className="w-20 shadow-md bg-white min-w-28 absolute left-10 top-2 rounded-md p-1 gap-2">
+                         {addFilters.length > 0 && filter && <View className="w-fit shadow-md bg-white min-w-28 absolute -mx-14  top-10 rounded-md p-1 gap-2">
                         {
                             addFilters.map((el, id) => (
                                 <AddFilter 
@@ -110,6 +113,8 @@ export function Filter({ filterButtons, addFilters }: FilterProps) {
                         }
 
                     </View>}
+
+            
                 </View>
             </View>
         </View>
@@ -148,7 +153,7 @@ export const AddFilter = ({ label, icon, onAdd }: AddFilters) => {
     return (
         <Pressable 
             onPress={onAdd}
-            className="w-30 flex flex-row items-center gap-1 justify-between  p-2 rounded-md border border-black/10 active:bg-black/5 "
+            className="w-60    flex flex-row items-center gap-1 justify-between py-1  px-4 rounded-md border border-black/10 active:bg-black/5 "
         >
             <Text>
                 {
