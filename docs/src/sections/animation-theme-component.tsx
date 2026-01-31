@@ -30,13 +30,7 @@ const demoUrl = [
     className: "  md:col-span-2",
     iframeClass: "w-[600px]"
   },
-    {
-    docsUrl: "/docs/money-checkout",
-    demoUrl: "https://sol-ui-krma.vercel.app/demo/MoneyCheckoutDemo",
-    className: " w-[358px]",
-    iframeClass : "w-[360px]"
    
-  },
 ];
 function AnimationThemeComponent() {
   return (
@@ -73,7 +67,7 @@ export const ComponentCard = ({ demoSrc , className , iframeClass}: { demoSrc: s
           <iframe
             height="100%"
             width="100%"
-            className={cn("w-[325px] h-[600px] overflow-hidden rounded-2xl shadow-[0px_0px_30px_0px_rgba(38,38,38,0.10)]" , iframeClass)}
+            className={cn("overflow-hidden rounded-2xl shadow-[0px_0px_30px_0px_rgba(38,38,38,0.10)]" , iframeClass)}
             src={demoSrc}
             title="InfoBadge demo"
             style={{
