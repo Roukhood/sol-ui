@@ -8,4 +8,3 @@ export const blockPreview = (src?: string) => {
         </div>
     )
 }
-// /ui-demo-preview/item-cart-preview-2.jpg
