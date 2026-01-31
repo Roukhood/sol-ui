@@ -20,9 +20,6 @@ export function ComponentPreview({
     full = false,
     ...props
 }: ComponentPreviewProps) {
-
-
-
     return (
         <div
             className={cn(
