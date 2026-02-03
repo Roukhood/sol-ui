@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 
-import PinInput from "../components/ui/pin-input";
+import PinInput from "../../components/ui/pin-input";
 
 
 export default function PinInputDemo() {

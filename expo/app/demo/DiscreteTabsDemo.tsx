@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import DiscreteTabs from "../components/ui/discrete-Tabs";
+import DiscreteTabs from "../../components/ui/discrete-Tabs";
 
 
 export default function DiscreteTabsDemo() {

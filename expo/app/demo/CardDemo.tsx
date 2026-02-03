@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { View, Alert } from "react-native";
-import { Card, CardBody, CardButton, CardHeader } from "../components/ui/card";
+import { Card, CardBody, CardButton, CardHeader } from "../../components/ui/card";
 
 
 export default function CardDemo() {

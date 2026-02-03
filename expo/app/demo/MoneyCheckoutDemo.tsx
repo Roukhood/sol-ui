@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import MoneyCheckout from "../components/ui/money-checkout";
+import MoneyCheckout from "../../components/ui/money-checkout";
 
 
 export default function FilterDemo() {

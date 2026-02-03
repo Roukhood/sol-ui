@@ -1,7 +1,7 @@
 import React from "react";
 import { View } from "react-native";
 
-import { Filter } from "../components/ui/filter";
+import { Filter } from "../../components/ui/filter";
 
 
 export default function FilterDemo() {

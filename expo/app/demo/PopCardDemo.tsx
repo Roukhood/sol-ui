@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import PopCard from "../components/ui/pop-card";
+import PopCard from "../../components/ui/pop-card";
 
 
 export default function PopCardDemo() {
