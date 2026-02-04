@@ -12,9 +12,7 @@ export const CalendarUI = ({ selectedDateDefault = today }: CalendarProps) => {
   const [selectedDate, setSelectDate] = React.useState(selectedDateDefault);
   return (
     <View
-      style={{
-        marginTop: 40,
-      }}
+     className="m-10"
     >
       <Calendar
         calendarActiveDateRanges={[
