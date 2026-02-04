@@ -5,7 +5,6 @@ import { CalendarUI } from "../ui/calendar";
 export const BasicCalendar = () => {
   return (
     <View className="pt-40">
-      
       <CalendarUI />
     </View>
   );
