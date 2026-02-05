@@ -1,14 +1,30 @@
 import React from "react";
-import { Pressable , Text } from "react-native";
+import { Pressable , PressableProps,  StyleSheet  , ViewProps} from "react-native";
 
-export function Button({children} :{ children :React.ReactNode}){
+type ButtonProps = PressableProps &  ViewProps & {
+    className ? : string,
+}
+
+export const Button = ({ className, children , ...props}: ButtonProps) =>{
     return(
-        <Pressable className=" w-32 py-2 flex items-center cursor-pointer rounded-md ">
-            <Text className="text-lg font-normal text-white/90">
+        <Pressable className={className}  {...props}  style={[style.button , props.style]}>
                 {
                     children
                 }
-            </Text>
         </Pressable>
     )
 }
+
+
+const style = StyleSheet.create({
+button:{
+    borderWidth: 0.5,
+    borderColor: "gray" ,
+    borderRadius: 10,
+    width: "auto",
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 10,
+    paddingBottom: 10, 
+}
+})
