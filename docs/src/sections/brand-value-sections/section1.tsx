@@ -5,21 +5,21 @@ import { useState } from "react";
 
 export const BrandInformationSection = () => {
   return (
-    <section>
-      <div className="pl-3  min-h-screen pt-20">
+    <section className="min-h-screen">
+      <div className="pl-3   pt-20">
         <h1 className="md:w-[700px] tracking-tight">
-          <span className="text-[20px] md:text-[40px] text-cyan-900">
+          <span className="text-[20px] md:text-[40px] text-cyan-900 dark:text-white">
             Design your UI with our changale, intractive designes
           </span>
         </h1>
 
         <div className="pt-10">
-          <div className="grid grid-cols-1  lg:grid-cols-3 h-[450px]">
-            <div className="col-span-2 border ">
-              <div className="lg:w-[550px] pl-3">
-                <span className="text-[24px] md:text-[40px]">
+          <div className="grid grid-cols-1  lg:grid-cols-3 md:h-[450px]">
+            <div className="col-span-2 border w-full">
+                <span className="text-[24px] md:text-[40px] pl-3 dark:text-white/80">
                   Fast with CLI & Package Managers
                 </span>
+              <div className="md:w-[550px] pl-3 mx-auto ">
                <div className="my-20 ">
                  <PackageManagers
                   commands={{
@@ -40,7 +40,7 @@ export const BrandInformationSection = () => {
             </div>
             <div className="col-span-1 border ">
               <div className="pl-3">
-                <span className="text-[24px] md:text-[40px]">
+                <span className="text-[24px] md:text-[40px] dark:text-white/80">
                   Change what <br /> you love
                 </span>
               </div>

@@ -24,7 +24,7 @@ export const CommunitySection = () => {
             </Button>
           </div>
         </div>
-        <div className="absolute top-0 z-10 w-[344px] overflow-hidden md:w-full">
+        <div className="absolute top-0 z-10 w-[344px] overflow-hidden md:w-full mx-auto mesh-gradient">
           <MeshGradient
             width={1210}
             height={400}

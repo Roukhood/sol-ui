@@ -31,9 +31,9 @@ const ThemeToggle = () => {
       aria-label="Toggle theme"
     >
       {theme == "light" ? (
-        <IconSun className="w-5 h-5" />
-      ) : (
         <IconMoon className="w-5 h-5" />
+      ) : (
+        <IconSun className="w-5 h-5" />
       )}
     </button>
   );
@@ -78,24 +78,33 @@ function Navbar() {
 
   return (
     <nav className="border border-l-0 border-r-0 border-t-0 border-b ">
-      <div className="sticky top-0 py-5 px-8">
+      <div className="sticky top-0 py-5 md:px-8 px-4">
         {/* desktop nav */}
         <div className="hidden lg:block">
           <div className="flex items-center justify-between ">
             {/* solui name logo  */}
+            
+
+<div className="">
+
             <SoluiNameLogo />
+</div>
+            
             <div className="flex items-center justify-between gap-4">
+              <Link href="/docs/Installation">
               <Button className="text-24 font-semibold border py-2 px-3 rounded-[4px] w-20 h-10 relative flex items-center justify-center group cursor-pointer">
                 <p className="text-24 font-semibold group-hover:-translate-y-px transition-all ease-linear  ">
                   Docs
                 </p>
               </Button>
+              </Link>
+              <Link href="https://github.com/satish-solera/sol-ui">
               <motion.button
                 layout
                 className="text-24 font-semibold border py-2 px-3 rounded-[4px] w-32 h-10   relative flex items-center bg-[#FFBB00] text-white cursor-pointer"
                 onMouseEnter={() => setIsView(true)}
                 onMouseLeave={() => setIsView(false)}
-              >
+                >
                 {!isView && <p> Solui's Github</p>}
                 {isView && (
                   <motion.span
@@ -118,6 +127,7 @@ function Navbar() {
                   </motion.span>
                 )}
               </motion.button>
+                    </Link>
             <Button
                 
                 className="text-24 font-semibold border  py-2 px-3 rounded-[4px] size-10  flex items-center justify-center"

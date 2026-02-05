@@ -92,12 +92,11 @@ export default function Home() {
         <Hero />
         <BrandInformationSection/>
       </div>
-      <div className="h-[500px] md:h-52"></div>
+      <div className=" sm:h-[500px] lg:h-10"></div>
       <ComponentDemoSection/>
-      <div className="h-[200px] md:h-20"></div>
+      <div className="h-[100px] md:h-10"></div>
       <CommunitySection/>
-      <div className="h-[500px] md:h-20"></div>
-      <TechnologySection/>
+     
       
       <div className="min-h-50">
       </div>

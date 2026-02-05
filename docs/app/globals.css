@@ -181,3 +181,13 @@
 .photo-card:nth-child(1):hover ~ .photo-card:nth-child(2) {
   height: 48px !important;
 }
+
+
+/* mesh gradient custom css */
+
+
+@media (max-width > 400) {
+  .mesh-gradient{
+    width: 450px
+  }
+}

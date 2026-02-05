@@ -13,7 +13,7 @@ export const Button = ({
   return(
     <button
     className={cn(
-      "text-24 font-semibold border py-2 px-3 rounded-[4px] w-32 h-10   relative flex items-center ",
+      "text-24 font-semibold border py-2 px-3 rounded-[4px] w-32 h-10   relative flex items-center cursor-pointer ",
       className,
     )}
     {...props}

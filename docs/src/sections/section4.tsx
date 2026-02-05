@@ -17,12 +17,12 @@ const TechnologyCardData = [
 export const TechnologySection = () => {
   return (
     <section>
-      <div className="pl-3  min-h-screen pt-10 ">
-        <span className="text-[20px] md:text-[40px] text-cyan-900 ">
+      <div className=" md:pl-3  min-h-screen pt-10 ">
+        <span className="text-[20px] md:text-[40px] text-cyan-900 pl-3">
           Make your UI with.
         </span>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-10">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-2 md:gap-4 mt-10 mx-2">
           {TechnologyCardData.map((el, id) => {
             return <TechnologyCard icon={el.logo} link={el.link} />;
           })}

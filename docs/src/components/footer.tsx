@@ -67,25 +67,39 @@ export const SocialLink = () => {
 
 export const BottomFooter = () => {
   return (
-    <div className="flex gap-2 ml-[23.5px]">
+    <div className="flex gap-2 ml-[23.5px] my-10">
       {[
-        { label: "2026", href: "/" },
+        { label: "2026", href: "/" , className:"border-none"},
         {
           label: "sol-auth",
           href: "https://github.com/satish-solera/sol-auth",
+          className: "bg-[#FFBB00] hover:bg-[#FFBB00]/90 text-white"
         },
+        
       ].map((el, id) => {
         return (
           <Link href={el.href} key={id}>
-            <span className="text-[20px] md:text-[40px] ">{el.label}</span>
+            <Button className={cn("" , el.className)}>
+
+            <span className="text-[20px] text-center mx-auto">{el.label}</span>
+            </Button>
           </Link>
         );
       })}
 
-      <div className="w-28 md:hidden block  items-center  py-px">
+      <div className="w-28  block  items-center  py-px">
         <a href="https://www.buymeacoffee.com/satishsolen">
           <img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
         </a>
+      </div>
+
+      <div className="">
+        <Button className="w-full">
+          <span className="mx-auto text-[20px]">
+
+          Schedule meeting with us
+          </span>
+        </Button>
       </div>
     </div>
   );
