@@ -145,6 +145,70 @@
             }
         ]
     },
+    {
+        "name": "card1",
+        "files": [
+            {
+                "path": "components/card1.tsx",
+                "target": "components/ui"
+            },
+            {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            },
+            {
+                "path": "components/card.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "card2",
+        "files": [
+            {
+                "path": "components/card2.tsx",
+                "target": "components/ui"
+            },
+            {
+                "path": "components/card.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "card3",
+        "files": [
+            {
+                "path": "components/card3.tsx",
+                "target": "components/ui"
+            },
+            {
+                "path": "components/card.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "card4",
+        "files": [
+            {
+                "path": "components/card4.tsx",
+                "target": "components/ui"
+            },
+            {
+                "path": "components/card.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
     
     {
         "name": "money-checkout",
