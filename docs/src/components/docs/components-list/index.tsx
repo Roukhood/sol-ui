@@ -6,26 +6,32 @@ type ComponentListProps ={
 } 
 
 export const ListOfComponents = [
-
     {
         name: "buttons" ,
-        componentDemoPhotoUrl: "/ui-demo-preview/item-cart-preview-1.jpg" ,
+        componentDemoPhotoUrl: "/ui-demo-preview/badge-1.jpg" ,
         componentDocsUrl: "docs/components/button"
     },
     {
         name: "badges" ,
-        componentDemoPhotoUrl: "/ui-demo-preview/item-cart-preview-1.jpg" ,
+        componentDemoPhotoUrl: "/ui-demo-preview/badge-3.jpg" ,
         componentDocsUrl: "docs/components/badge"
     },
     {
         name: "cards" ,
-        componentDemoPhotoUrl: "/ui-demo-preview/item-cart-preview-1.jpg" ,
-        componentDocsUrl: "docs/components/card"
+        componentDemoPhotoUrl: "/ui-demo-preview/card-4.jpg" ,
+        componentDocsUrl: "docs/components/card",
+        imgClassName : "object-cover h-[300px] -mt-30"
     },
     {
         name: "profile cards" ,
         componentDemoPhotoUrl: "/ui-demo-preview/item-cart-preview-1.jpg" ,
         componentDocsUrl: "docs/components/profile-card"
+    },
+    {
+        name: "Calendar" ,
+        componentDemoPhotoUrl: "/ui-demo-preview/calendar.jpg" ,
+        componentDocsUrl: "docs/components/calendar",
+        imgClassName : "object-cover h-[500px]"
     },
 
 ]
