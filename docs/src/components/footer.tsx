@@ -3,11 +3,12 @@ import { cn } from "@/lib/utils/cn";
 import { IconArrowBadgeLeft, IconBrandGithub } from "@tabler/icons-react";
 import { motion } from "motion/react";
 import Link from "next/link";
-import { Button } from "./ui/button";
+
+import { SolauthLogo } from "./svgs";
 
 function Footer() {
   return (
-    <footer className="min-h-[200px] border border-l-0 border-r-0 border-b-0">
+    <footer className="min-h-50 border border-l-0 border-r-0 border-b-0">
       <div className="pl-3 pt-20 md:pt-10 relative mt-10">
         <div className="absolute bottom-0 ">
             <BottomFooter />
@@ -67,25 +68,16 @@ export const SocialLink = () => {
 
 export const BottomFooter = () => {
   return (
-    <div className="flex flex-col md:flex-row gap-4 ml-[23.5px] pt-5">
-      {[
-        { label: "2026", href: "/" , className:"border-none px-0 w-10" },
-        {
-          label: "sol-auth",
-          href: "https://github.com/satish-solera/sol-auth",
-          className: "bg-[#FFBB00] hover:bg-[#FFBB00]/90 text-white"
-        },
-        
-      ].map((el, id) => {
-        return (
-          <Link href={el.href} key={id}>
-            <Button className={cn("" , el.className)}>
-            <span className={cn("text-[20px] text-center mx-auto" , id == 0 && "mx-0") }>{el.label}</span>
-            </Button>
-          </Link>
-        );
-      })}
-
+    <div className="flex flex-col md:flex-row gap-4 ml-[23.5px] pt-5 md:items-center ">
+      
+      <span>
+        <p className="text-24 font-semibold ">
+          2026
+        </p>
+      </span>
+      <Link href="https://github.com/satish-solera/sol-auth">
+      <SolauthLogo/>
+      </Link>
       <div className="w-28  block  items-center  py-px">
         <a href="https://www.buymeacoffee.com/satishsolen">
           <img src="https://img.buymeacoffee.com/button-api/?text=Buymeacoffee&emoji=&slug=satishsolen&button_colour=FFDD00&font_colour=000000&font_family=Cookie&outline_colour=000000&coffee_colour=ffffff" />
