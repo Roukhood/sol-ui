@@ -12,7 +12,7 @@ export const SpinningBadge = ({BadgeValue = "Loading", color = "red"  } : {Badge
                         BadgeValue
                     }
                 </Text>
-               <ActivityIndicator  color={color}/>
+               <ActivityIndicator animating={true} color={color}/>
             </View>
         </Button>
     )
