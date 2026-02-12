@@ -1,6 +1,6 @@
 
 import {  Text } from "react-native"
-import {Button} from "../ui/button"
+import {Button} from "./button"
 import React from "react"
 
 export const SimpleButton = ({title = "click me"} : {title :string}) =>{
