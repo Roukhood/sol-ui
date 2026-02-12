@@ -9,6 +9,7 @@ import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
 import { APITable } from "@/src/components/docs/api-table";
 import { PackageManagers } from "@/src/components/docs/package-manager";
+import { blockPreview } from "@/src/components/ui/block-preview";
 
 <Tabs items={["Preview", "Code"]}>
   <Tab value="Preview">
@@ -89,7 +90,6 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
   <Tab value="Command">
 
 <PackageManagers
-  
   commands={{
     cli: "npx solui@latest add badge",
    
@@ -136,35 +136,114 @@ export default function InfoBadgeDemo() {
 }
 ```
 
+## Default badge
+
+<blockPreview >
+ <img src="/ui-demo-preview/badge-1.jpg" width={200} height={200} />
+</blockPreview>
+
+```tsx
+import { DefaultBadge } from '@/components/badges/badge1';
+
+export default function DefaultBadgeDemo() {
+  return <DefaultBadge BadgeValue="Default" />;
+}
+```
+
+
+<PackageManagers
+  commands={{
+    cli: "npx solui@latest add badge-1",
+  
+  }}
+/>
+
+## Spinning badge
+
+
+<blockPreview >
+ <img src="/ui-demo-preview/badge-2.jpg" width={200} height={200} />
+</blockPreview>
+
+
+```tsx
+import { SpinningBadge } from '@/components/badges/badge2';
+
+export default function SpinningBadgeDemo() {
+  return <SpinningBadge BadgeValue="Loading" />;
+}
+```
+<PackageManagers
+  commands={{
+    cli: "npx solui@latest add badge-2",
+  
+  }}
+/>
+
+## Count badge
+
+<blockPreview >
+ <img src="/ui-demo-preview/badge-3.jpg" width={200} height={200} />
+</blockPreview>
+
+
+```tsx
+import { CountBadge } from '@/components/badges/badge3';
+
+export default function CountBadgeDemo() {
+  return <CountBadge Count={2} imgUrl="default.jpg"/>;
+}
+```
+<PackageManagers
+  commands={{
+    cli: "npx solui@latest add badge-3",
+  
+  }}
+/>
+
+
 ## Warning badge
+
+<blockPreview >
+ <img src="/ui-demo-preview/badge-4.jpg" width={200} height={200} />
+</blockPreview>
 
 ```tsx
 import { WarningBadge } from "@/components/ui/WarningBadge";
 
-export default function InfoBadgeDemo() {
+export default function WarningBadgeDemo() {
   return <WarningBadge title="Download again" />;
 }
 ```
 
+<PackageManagers
+  commands={{
+    cli: "npx solui@latest add badge-4",
+  
+  }}
+/>
+
+
 ## Error badge
+
+<blockPreview >
+ <img src="/ui-demo-preview/badge-5.jpg" width={200} height={200} />
+</blockPreview>
 
 ```tsx
 import { ErrorBadge } from "@/components/ui/ErrorBadge";
 
-export default function InfoBadgeDemo() {
+export default function ErrorBadgeDemo() {
   return <ErrorBadge title="User not found" />;
 }
 ```
 
-## Props
-
-<APITable
-  data={[
-    {
-      prop: "info",
-      type: "string",
-      defaultValue: "Buy Coffee",
-      description: "showing information on the badge",
-    },
-  ]}
+<PackageManagers
+  commands={{
+    cli: "npx solui@latest add badge-5",
+  }}
 />
+
+
+
+

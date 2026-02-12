@@ -27,11 +27,7 @@ const dummyData = {
 
 export default function ItemCartDemo() {
     return (
-<<<<<<< HEAD
-        <View className='h-full w-full'>
-=======
         <View className=''>
->>>>>>> e5371ca5f696a8a28bcc250eda7b99214da53205
             <ItemCart 
                 price={dummyData.price}
                 itemName={dummyData.itemName}
