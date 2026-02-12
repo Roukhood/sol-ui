@@ -23,11 +23,6 @@ export const ListOfComponents = [
         imgClassName : "object-cover h-[300px] -mt-30"
     },
     {
-        name: "profile cards" ,
-        componentDemoPhotoUrl: "/ui-demo-preview/item-cart-preview-1.jpg" ,
-        componentDocsUrl: "docs/components/profile-card"
-    },
-    {
         name: "Calendar" ,
         componentDemoPhotoUrl: "/ui-demo-preview/calendar.jpg" ,
         componentDocsUrl: "docs/components/calendar",
