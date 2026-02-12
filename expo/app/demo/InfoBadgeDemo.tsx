@@ -1,6 +1,6 @@
 import React from "react";
 import { View } from "react-native";
-import {  InfoBadge } from "../components/ui/badge";
+import {  InfoBadge } from "../components/badges/badge";
 
 
 export default function InfoBadgeDemo() {

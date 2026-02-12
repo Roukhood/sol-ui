@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import "react-native-web/dist"
-import Navbar from "@/src/components/ui/navbar";
-import Footer from "@/src/components/ui/footer";
+import Navbar from "@/src/components/navbar";
+import Footer from "@/src/components/footer";
 import { RootProvider } from "fumadocs-ui/provider/next";
 import { ThemeProvider } from 'next-themes';
 import { siteConfig } from "./config/site";

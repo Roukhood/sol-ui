@@ -4,8 +4,9 @@ import { IconBrandGithub, IconMoon, IconSun } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useTheme } from "next-themes";
 import Link from "next/link";
-import { SearchLinearIcon } from "../icons/searchIcon";
+
 import * as React from "react";
+import { SearchLinearIcon } from "./icons";
 
 
 // Theme Toggle Component

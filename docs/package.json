@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
+    "@paper-design/shaders-react": "^0.0.71",
     "@radix-ui/react-tabs": "^1.1.13",
     "@tabler/icons-react": "^3.36.1",
     "@types/mdx": "^2.0.13",

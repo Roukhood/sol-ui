@@ -1,0 +1,133 @@
+---
+title: Calendar
+description: See your good day.
+---
+
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { ComponentPreview } from "@/src/components/ui/component-preview";
+import { SourceCode } from "@/src/components/ui/source-code";
+import { APITable } from "@/src/components/docs/api-table";
+import { PackageManagers } from "@/src/components/docs/package-manager";
+
+
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+    <ComponentPreview>
+
+<blockPreview >
+ <img src="/ui-demo-preview/calendar.jpg" width={200} height={200} />
+</blockPreview>
+    </ComponentPreview>
+  </Tab>
+  <Tab value="Code">
+  <SourceCode content={
+    `
+import { Calendar, toDateId, useDateRange } from "@marceloterreiro/flash-calendar";
+import { View } from "react-native";
+import * as React from "react";
+
+type CalendarProps = {
+  selectedDateDefault?: string;
+};
+
+const today = toDateId(new Date());
+
+export const CalendarUI = ({ selectedDateDefault = today }: CalendarProps) => {
+  const [selectedDate, setSelectDate] = React.useState(selectedDateDefault);
+  return (
+    <View
+      style={{
+        marginTop: 40,
+      }}
+    >
+      <Calendar
+        calendarActiveDateRanges={[
+          {
+            startId: selectedDate,
+            endId: selectedDate,
+          },
+        ]}
+        calendarMonthId={today}
+        onCalendarDayPress={setSelectDate}
+      />
+    </View>
+  );
+};
+
+`
+}/>
+  </Tab>
+</Tabs>
+
+
+
+## Installation
+
+<Tabs items={['Command', 'Manual']}>
+  <Tab value="Command">
+
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add calendar",
+   
+  }}
+/>
+  </Tab>
+  <Tab value="Manual">
+    <Steps>
+      <Step>
+        ### Install dependencies
+
+       <PackageManagers
+
+commands={{
+    npm: "npm install  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    yarn: "yarn add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    pnpm: "pnpm add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    bun: "bun add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+  }}
+/>
+</Step>
+
+ ### Copy the code
+<Step>
+        Copy the code from the **Code** tab above into `components/ui/calendar.tsx `.
+      </Step>
+      <Step>
+        ### Update imports
+
+        Update the imports to match your project structure.
+      </Step>
+  </Steps>
+
+  </Tab>
+</Tabs>
+
+
+## Usage
+
+```tsx
+import { CalendarUI } from "@/components/ui/calendar";
+
+export const BasicCalendar = () => {
+  return  <CalendarUI />
+};
+
+```
+
+## Props
+
+<APITable
+  data={[
+    {
+      prop: "selectedDateDefault",
+      type: "string",
+      defaultValue: "today date",
+      description: "Getting date from user",
+    },
+  ]}
+/>
