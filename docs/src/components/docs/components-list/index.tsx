@@ -8,7 +8,7 @@ type ComponentListProps ={
 export const ListOfComponents = [
     {
         name: "buttons" ,
-        componentDemoPhotoUrl: "/ui-demo-preview/badge-1.jpg" ,
+        componentDemoPhotoUrl: "/ui-demo-preview/button-1.jpg" ,
         componentDocsUrl: "docs/components/button"
     },
     {
