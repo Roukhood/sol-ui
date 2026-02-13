@@ -9,6 +9,71 @@
         ]
     },
     {
+        "name": "button1",
+        "files": [
+            {
+                "path": "components/button1.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "button2",
+        "files": [
+            {
+                "path": "components/button2.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "button3",
+        "files": [
+            {
+                "path": "components/button3.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "button4",
+        "files": [
+            {
+                "path": "components/button4.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
+        "name": "button5",
+        "files": [
+            {
+                "path": "components/button5.tsx",
+                "target": "components/ui"
+            },
+             {
+                "path": "components/button.tsx",
+                "target": "components/ui"
+            }
+        ]
+    },
+    {
         "name": "profile-card",
         "files": [
             {

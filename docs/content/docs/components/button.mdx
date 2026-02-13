@@ -1,0 +1,208 @@
+---
+title: Button
+description: Pressable component .
+---
+
+
+import { Tab, Tabs } from "fumadocs-ui/components/tabs";
+import { Step, Steps } from "fumadocs-ui/components/steps";
+import { ComponentPreview } from "@/src/components/ui/component-preview";
+import { SourceCode } from "@/src/components/ui/source-code";
+import { PackageManagers } from "@/src/components/docs/package-manager";
+import { blockPreview } from "@/src/components/ui/block-preview";
+
+
+
+<Tabs items={["Preview", "Code"]}>
+  <Tab value="Preview">
+
+<blockPreview >
+ <img src="/ui-demo-preview/button-5.jpg" width={400} height={400} />
+</blockPreview>
+
+  </Tab>
+  <Tab value="Code">
+  <SourceCode content={ 
+    `
+import {  Text, View , StyleSheet } from "react-native"
+import {Button} from "../ui/button"
+import React from "react"
+
+export const ShinyButton = ({title = "Shiny Button" } : {title: string}) =>{
+    return(
+      <Button style={style.button}>
+        <Text style={style.text}>
+            {title}
+        </Text>
+        <View style={style.shine}/>
+      </Button>
+    )
+}
+
+
+const style = StyleSheet.create({
+
+    button:{
+        position: "relative",
+        backgroundColor: "#2563eb",
+        paddingVertical: 14,
+        paddingHorizontal: 28,
+        borderRadius: 14,
+        overflow:"hidden",
+        alignItems:"center"
+    },
+
+    text:{
+        color:"#fff",
+        fontWeight: "600",
+        fontSize: 16
+    },
+    shine:{
+        position:"absolute",
+        top:0,
+        left: -50,
+        width: 80,
+        height: "100%",
+        backgroundColor: "rgba(255,255,255,0.3)",
+        transform:[{
+            rotate:"20deg"
+        }]
+    }
+})
+`
+  }/>
+  </Tab>
+</Tabs>
+
+
+
+## Installation
+
+<Tabs items={['Command', 'Manual']}>
+  <Tab value="Command">
+   
+    <PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add button5"
+  }}
+/>
+  </Tab>
+  <Tab value="Manual">
+    <Steps>
+      <Step>
+        ### Install dependencies
+   <PackageManagers
+  commands={{
+    npm: "npm install  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    yarn: "yarn add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    pnpm: "pnpm add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+    bun: "bun add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
+  }}
+/>
+      </Step>
+      <Step>
+        ### Copy the code
+
+        Copy the code from the **Code** tab above into `components/ui/button.tsx `.
+      </Step>
+      <Step>
+        ### Update imports
+
+        Update the imports to match your project structure.
+      </Step>
+    </Steps>
+
+  </Tab>
+</Tabs>
+
+
+
+## Usage
+
+
+## Simple button
+
+
+<blockPreview >
+ <img src="/ui-demo-preview/button-1.jpg" width={400} height={200} />
+</blockPreview>
+
+```tsx
+import { SimpleButton } from '@/components/ui/button1';
+
+export default function SimpleButtonDemo() {
+    return  <SimpleButton title="click me"/>
+}
+```
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add button1",
+   
+  }}
+/>
+
+## Button with logo
+
+
+<blockPreview >
+ <img src="/ui-demo-preview/button-2.jpg" width={400} height={200} />
+</blockPreview>
+
+```tsx
+import { ButtonWithLogo  } from '@/components/ui/button2';
+
+export default function ButtonWithLogoDemo() {
+    return  <ButtonWithLogo title="solUI" imgSrc="your-img"/>
+}
+```
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add button2"
+  }}
+/>
+
+## Button with Icon
+
+
+<blockPreview >
+ <img src="/ui-demo-preview/button-3.jpg" width={400} height={200} />
+</blockPreview>
+
+```tsx
+import { ButtonWithIcon  } from '@/components/ui/button3';
+
+export default function ButtonWithIconDemo() {
+    return  <ButtonWithIcon title="Enter" icon={<yourIcon/>}/>
+}
+```
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add button3",
+   
+  }}
+/>
+
+## Combo Buttons
+
+<blockPreview >
+ <img src="/ui-demo-preview/button-4.jpg" width={400} height={200} />
+</blockPreview>
+
+```tsx
+import { ComboButton } from '@/components/ui/button4';
+
+export default function ButtonWithLogoDemo() {
+    return  <ComboButton  title1="Login" title2="SignUp"/>
+}
+```
+<PackageManagers
+  
+  commands={{
+    cli: "npx solui@latest add button4",
+   
+  }}
+/>

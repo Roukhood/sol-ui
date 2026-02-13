@@ -1,5 +1,5 @@
 import { Text, View } from "react-native";
-import { Button } from "../ui/button";
+import { Button } from "./button";
 import React from "react";
 import AntDesign from "react-native-vector-icons/AntDesign";
 
