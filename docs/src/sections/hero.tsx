@@ -19,7 +19,7 @@ function Hero() {
           </span>
           <br />
           <span className="text-[20px] lg:text-[40px] text-cyan-900 dark:text-white/80">
-            Reusable UI Blocks, Components - Make your UI faster.
+            Reusable UI Blocks, Components - Make your app UI faster.
           </span>
         </h1>
 
