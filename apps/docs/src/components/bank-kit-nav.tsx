@@ -32,9 +32,10 @@ function BankKitNav() {
                 </p>
               </Link>
               <Link
+                className="p-1 rounded-lg "
                 href="https://github.com/satish-solera/sol-ui">
                 <span className="sr-only">github</span>
-                <GithubIcon />
+                <GithubIcon  size={20}/>
               </Link>
               <ThemeToggle />
             </div>

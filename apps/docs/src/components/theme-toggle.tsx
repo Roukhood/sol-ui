@@ -20,7 +20,7 @@ export default function ThemeToggle () {
   return (
     <Button
       onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
-      className="p-1 w-fit border-none"
+      className="p-1 w-fit border-none rounded-lg"
       aria-label="Toggle theme">
       {theme == "light" ? (
         <IconMoon className="w-5 h-5" />
