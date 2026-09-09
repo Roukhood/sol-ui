@@ -17,17 +17,17 @@ function BankKitNav() {
             <SolUINameLogoElement/>
             <div className="flex items-center justify-between gap-3">
               <Link href="/bank-kit">
-                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground active:translate-y-px select-none transition-all">
+                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground  select-none transition-all">
                   Home
                 </p>
               </Link>
               <Link href="/bank-kit/components">
-                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground active:translate-y-px select-none transition-all">
+                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground  select-none transition-all">
                   Components
                 </p>
               </Link>
               <Link href="/docs/Installation">
-                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground active:translate-y-px select-none transition-all">
+                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground select-none transition-all">
                   Blocks
                 </p>
               </Link>
@@ -47,6 +47,7 @@ function BankKitNav() {
             <SolUINameLogoElement/>
             <div className="">
               <button
+                aria-label="hamburger-icon"
                 className="text-24 font-semibold border py-2 px-3 rounded-[4px] w-10 h-10  flex items-center justify-center "
                 onClick={() => setIsView((prev) => !prev)}
               >

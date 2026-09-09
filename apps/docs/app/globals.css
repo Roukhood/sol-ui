@@ -11,6 +11,8 @@
 :root {
   --background: #ffffff;
   --foreground: #000000;
+  --danger: red ;
+  --border-primary: black;
   --hover-primary:  hsl(0, 0%, 0% , 80%);
   --hover-secondary: hsl(0, 0%, 0% , 3%);
   --text-color-primary : #08090a99;
@@ -20,10 +22,12 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-danger:var(--danger);
 
   --color-background-inverse: var(--foreground);
   --color-foreground-inverse: var(--background);
 
+  --border-primary:var(--border-primary);
 
 
   --hover-primary : var(--hover-primary);
@@ -40,8 +44,8 @@
 .dark {
   --background: #000000;
   --foreground: #ffffff;
-
-
+ --danger : red;
+--border-primary:black;
   /* hover  */
   --hover-primary: hsl(0, 0%, 100%, 90%);
   --hover-secondary: hsla(0, 40%, 91%, 0.05);
@@ -95,8 +99,17 @@
   display: none;
 }
 
-
-
+@keyframes scrollUP {
+0% {
+transform: translateY(100%);
+}
+100%{
+transform:translateY(0);
+}
+};
+.scrollUp{
+animation: scrollUP ease-in 100ms;
+}
 
 
 /* repeating linear gradients */

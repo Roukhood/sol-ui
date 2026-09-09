@@ -26,7 +26,7 @@ function Pricing() {
     return (
         <div className="w-full  max-w-3xl  ">
             <div className="flex items-center justify-center">
-                <div className="grid grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="h-fit w-70 rounded-2xl border ">
                         <div data-slot="card-title" className="text-md font-medium border-b pl-4 py-2">
                             Monthly

@@ -1,3 +1,5 @@
+"use client";
+import * as React from "react";
 const BankAcconts = [
   {
     name: "SOLA Bank",
@@ -9,45 +11,57 @@ const BankAcconts = [
   },
 ];
 function Payment() {
+  const [isPinOpen, setIsPinOpen] = React.useState(false);
+  const [isDelete, setIsDelete] = React.useState(false);
   return (
-    <div className="w-full max-w-sm  flex items-center justify-center rounded-2xl">
-      <div className="w-full relative h-80 max-w-[20rem] bg-(--hover-secondary) text-foreground border rounded-2xl px-3 pt-4">
-        <div data-slot="card-title" className="text-md font-medium mb-1 pl-px">
+    <div className="w-full max-w-[16rem] flex items-center justify-center rounded-2xl">
+      <div className="w-full relative h-fit  border rounded-2xl py-4 overflow-hidden bgBlur">
+        <div data-slot="card-title" className="text-md font-medium mb-1 pl-3">
           Sending money to
         </div>
-        <div data-slot="heading" className=" text-(--text-primary) text-sm">
+        <div
+          data-slot="heading"
+          className=" text-(--text-primary) text-sm pl-3"
+        >
           Satish
         </div>
-        <div className="flex flex-col items-center gap-2 mt-8">
-          <input placeholder="Enter amount" className="outline-none" />
-          <div className="flex items-center gap-2 select-none">
-            <button className="active:translate-y-px transition-all hover:bg-(--hover-primary) active:bg-(--hover-primary) border w-fit px-3 py-1 rounded-2xl bg-background-inverse text-foreground-inverse">
-              Pay
+        <div className="flex flex-col items-center gap-2 my-10">
+          <input placeholder="Enter amount" className="outline-none border-b" />
+         
+          <div className="flex items-center gap-2 select-none ">
+            <button
+              onClick={() => setIsPinOpen(true)}
+              className=" h-[31px] flex items-center active:translate-y-px transition-all hover:bg-(--hover-primary) active:bg-(--hover-primary)  px-3 py-px rounded-2xl bg-background-inverse text-foreground-inverse"
+            >
+              <span className="pb-[2.5px]">Pay</span>
             </button>
-            <button className="active:translate-y-px  transition-all hover:bg-(--hover-secondary) active:hover:bg-(--hover-secondary) border w-fit px-3 py-1 rounded-2xl">
-              Cancle Payment
+            <button
+              onClick={() => setIsDelete(true)}
+              className="h-[31px] flex items-center active:translate-y-px transition-all bg-danger hover:bg-(--hover-danger/60) active:bg-(--hover-danger/60) text-white  px-3 py-px rounded-2xl"
+            >
+              <span className="pb-[2.5px]">Cancle payment</span>
             </button>
           </div>
         </div>
 
-        <div
+        {/* <div
           data-slot="card-title"
           className="text-md font-medium mb-1 pl-px mt-10"
         >
           Bank accounts
-        </div>
+        </div> */}
 
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col mt-8">
           {BankAcconts.map((el, id) => {
             return (
               <div
                 key={id}
-                data-slot="heading"
-                className="transform-gpu will-change-transform text-(--text-primary) text-sm flex justify-between items-center gap-2 border pb-1 pl-2 pr-1 rounded-2xl active:translate-y-px  transition-all hover:bg-(--hover-secondary) active:hover:bg-(--hover-secondary)"
+                data-slot="bank account"
+                className="transform-gpu will-change-transform text-(--text-primary) text-sm flex justify-between items-center gap-2 border-b p-3  hover:bg-(--hover-secondary) active:hover:bg-(--hover-secondary)"
               >
-                <span className="pt-1 select-none">{el.name}</span>{" "}
+                <span className=" select-none">{el.name}</span>{" "}
                 {el.selected && (
-                  <span className="text-black  border border-green-200 rounded-full px-1 bg-green-100 dark:bg-green-200 select-none mt-1">
+                  <span className="border  rounded-full px-2 py-px select-none ">
                     Selected
                   </span>
                 )}
@@ -55,6 +69,51 @@ function Payment() {
             );
           })}
         </div>
+        {isDelete && (
+          <div className="absolute bottom-0 right-0 left-0 rounded-2xl w-full h-fit py-10 border bg-background scrollUp dp">
+            <div className="flex flex-col items-center gap-2 ">
+              <p className="text-center ">
+                Are you want to <br /> cancle this transaction
+              </p>
+              <div className="flex items-center gap-2 select-none  -mt-5">
+                <button
+                  onClick={() => setIsDelete(false)}
+                  className=" h-[31px] flex items-center active:translate-y-px transition-all hover:bg-(--hover-primary) active:bg-(--hover-primary)  px-3 py-px rounded-2xl bg-background-inverse text-foreground-inverse"
+                >
+                  <span className="pb-[2.5px]">No</span>
+                </button>
+                <button
+                  onClick={() => setIsDelete(false)}
+                  className="h-[31px] flex items-center active:translate-y-px transition-all bg-danger hover:bg-(--hover-danger/60) active:bg-(--hover-danger/60) text-white  px-3 py-px rounded-2xl"
+                >
+                  <span className="pb-[2.5px]">Cancle payment</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
+
+        {isPinOpen && (
+          <div className="absolute bottom-0 right-0 left-0 rounded-2xl w-full h-fit py-10 border bg-background scrollUp dp">
+            <div className="relative h-full w-full pt-4 px-3">
+              <div className="flex flex-col gap-2 ">
+                <input
+                  maxLength={4}
+                  placeholder="Enter pin"
+                  className="outline-none pl-2 py-1 border rounded-lg "
+                />
+                
+                <button
+                  onClick={() => setIsPinOpen(false)}
+                  data-slot="button"
+                  className="w-fit h-[31px] flex items-center active:translate-y-px transition-all hover:bg-(--hover-primary) active:bg-(--hover-primary)  px-3 py-px rounded-2xl bg-background-inverse text-foreground-inverse"
+                >
+                  verify
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

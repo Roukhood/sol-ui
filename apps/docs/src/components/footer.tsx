@@ -35,7 +35,7 @@ export const SocialLink = () => {
 
 export const BottomFooter = () => {
   return (
-    <div className="flex flex-col md:flex-row md:gap-4 items-start md:items-center ">
+    <div className="flex flex-col md:flex-row md:gap-2 items-start md:items-center ">
       <div className="flex items-center gap-1 select-none">
         <div data-slot="heading" className=" font-medium">
           Built at
