@@ -3,8 +3,6 @@ title: Badge
 description: A component to show different Badges in our mobile.
 ---
 
-import { Tab, Tabs } from "fumadocs-ui/components/tabs";
-import { Step, Steps } from "fumadocs-ui/components/steps";
 import { ComponentPreview } from "@/src/components/ui/component-preview";
 import { SourceCode } from "@/src/components/ui/source-code";
 import { APITable } from "@/src/components/docs/api-table";
@@ -85,46 +83,13 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 
 ## Installation
 
-<DocTabs items={['Command', 'Manual']}>
-  <DocTab value="Command">
+<DocTabs items={['Agents']}>
+  <DocTab value="Agents">
+    Use any MCP-compatible coding agent to install this component. Ask your agent:
 
-<PackageManagers
-  commands={{
-    cli: "npx solui@latest add badge",
-   
-  }}
-/>
-  </DocTab>
-  <DocTab value="Manual">
-    <Steps>
-      <Step>
-        ### Install dependencies
+    > Install the `payment-1` Sol UI component.
 
-       <PackageManagers
-
-commands={{
-    npm: "npm install  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
-    yarn: "yarn add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
-    pnpm: "pnpm add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
-    bun: "bun add  nativewind react-native-reanimated@~3.17.4 react-native-safe-area-context@5.4.0 --dev tailwindcss@^3.4.17 prettier-plugin-tailwindcss@^0.5.11  react-native-vector-icons  ",
-  }}
-/>
-
-</Step>
-
-### Copy the code
-
-<Step>
-        Copy the code from the **Code** tab above into `components/ui/badge.tsx or components/ui/info-badge.tsx `.
-      </Step>
-      <Step>
-        ### Update imports
-
-        Update the imports to match your project structure.
-      </Step>
-
-  </Steps>
-
+    The agent can use the `install_components` tool to add the component and its required dependencies to your project.
   </DocTab>
 </DocTabs>
 
