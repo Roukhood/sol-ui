@@ -1,0 +1,5 @@
+{
+  "registry": "registry/registry.json",
+  "source": "registry",
+  "componentsDir": "app"
+}
