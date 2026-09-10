@@ -17,14 +17,18 @@ export default function DocsLayout({
 }) {
   return (
     <>
+   <div className="flex gap-2">
+     <SideBarDocs/>
       <DocLayout
         {...DOCS_LAYOUT_PROPS}
-        nav={{
-          component: <BankKitNav/>,
+        sidebar={{
+          enabled: false
         }}
       >
+        
         {children}
       </DocLayout>
+   </div>
     </>
   );
 }

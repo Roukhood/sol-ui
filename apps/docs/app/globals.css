@@ -125,3 +125,18 @@ animation: scrollUP ease-in 100ms;
     45deg , rgb(195, 233, 199) 0px , rgb(181, 218, 185) 2px , transparent 2px , transparent 10px
   )
 }
+
+
+.screenshot-mode #nd-sidebar,
+.screenshot-mode #nd-toc,
+.screenshot-mode #nd-page article > *:not(#docs-body),
+.screenshot-mode #nd-page #docs-body > *:not(#component-preview),
+.screenshot-mode #component-preview-tab-list {
+  opacity: 0 !important;
+}
+
+.scroll-animation{
+  scroll-behavior: smooth;
+  scroll-margin-top: 20px;
+  transition: transform 200ms ease;
+}
