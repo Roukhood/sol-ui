@@ -11,6 +11,7 @@
   "exports": {
     ".": "./src/index.ts",
     "./blocks": "./src/blocks/index.tsx",
+    "./components": "./src/components/index.tsx",
     "./blocks/hero-sections/one": "./src/blocks/hero-sections/one/index.tsx",
     "./blocks/hero-sections/two": "./src/blocks/hero-sections/two/index.tsx",
     "./styles.css": "./src/styles.css",

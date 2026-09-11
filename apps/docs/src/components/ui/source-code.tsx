@@ -17,8 +17,7 @@ export async function SourceCode({
   content: string;
 }) {
 
-    const lang = 'tsx'
-
+  const lang = 'tsx'
   const html = await codeToHtml(content, {
    lang, 
     themes: {
@@ -29,7 +28,7 @@ export async function SourceCode({
   });
 
   return (
-    <CodeBlock title={title}>
+    <CodeBlock title={title} className="bg-[#ebebeb]/40 dark:bg-[#121212]">
       <div dangerouslySetInnerHTML={{ __html: html}} />
     </CodeBlock>
   );

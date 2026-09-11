@@ -6,7 +6,7 @@ import { History } from "./payment-history";
 import { PaymentRequest } from "./payment-request";
 
 import { SideBar } from "./side-bar";
-import { PaymentThree } from "@sol-ui/bank-kit/blocks";
+import { PaymentThree } from "@sol-ui/bank-kit/components";
 
 function CardsDemo() {
   return (
@@ -59,7 +59,7 @@ export const CardSkelleton = ({
   return (
     <div
       className={cn(
-        "border  rounded-[min(var(--radius-2xl),24px)] w-[20rem] lg:w-full  ",
+        "border  rounded-[min(var(--radius-2xl),24px)] w-[20rem] lg:w-full ",
         className,
       )}
     >
