@@ -4,8 +4,7 @@ import { IconLayoutSidebarFilled } from "@tabler/icons-react";
 import { cn } from "@/lib/utils/cn";
 import { componentItems } from "@sol-ui/bank-kit";
 import Link from "next/link";
-import { Heading } from "../../../../packages/helper-ui/www/components/headings";
-
+import {Heading} from "@sol-ui/components"
 type RegistryItem = {
   title: string;
   category: string;

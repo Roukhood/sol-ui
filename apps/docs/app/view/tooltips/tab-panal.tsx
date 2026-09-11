@@ -54,7 +54,7 @@ export function TabPanel({
           className={cn(
             "active:translate-y-0 border-0 rounded-lg transition-all",
           )}
-          typeOfBtn={isTabOpenPreview ? "black" : ""}
+          variant={isTabOpenPreview ? "inverse" : "default"}
           onClick={() => {
             setIsTabOpenPreview(true);
             setIsTabOpenCode(false);
@@ -67,7 +67,7 @@ export function TabPanel({
           className={cn(
             "active:translate-y-0 border-0 rounded-lg transition-all ",
           )}
-          typeOfBtn={isTabOpenCode ? "black" : ""}
+          variant={isTabOpenCode ? "inverse" : "default"}
           onClick={() => {
             setIsTabOpenCode(true);
             setIsTabOpenPreview(false);
@@ -101,7 +101,7 @@ export const Devices = ({
           <div key={device.name}>
             <Button
               type="button"
-              typeOfBtn={selectedDevice === device.name ? "black" : "white"}
+              variant={selectedDevice === device.name ? "inverse" : "default"}
               className="active:translate-y-0 flex py-[6.5px] border-0 rounded-lg"
               aria-label={device.label}
               aria-pressed={selectedDevice === device.name}
@@ -122,7 +122,7 @@ export const InstallationCommands = ({ command }: { command: string }) => {
   return (
     <div className="border rounded-lg ">
       <Button
-        typeOfBtn="white"
+        variant="default"
         className="active:translate-y-0 flex gap-2 border-0 rounded-lg "
         onClick={copy}
       >

@@ -24,6 +24,8 @@
       "@expo/*" : ["../expo/*"],
       "@sol-ui/bank-kit": ["../packages/bank-kit-later/src/index.ts"],
       "@sol-ui/bank-kit/*": ["../packages/bank-kit-later/src/*"],
+      "@sol-ui/components": ["../packages/components/src/index.ts"],
+      "@sol-ui/components/*": ["../packages/components/src/*"],
       "fumadocs-mdx:collections/*": [".source/*"]
     }
   },

@@ -3,7 +3,7 @@ import { createMDX } from "fumadocs-mdx/next";
 /** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  transpilePackages: ["@sol-ui/bank-kit"],
+  transpilePackages: ["@sol-ui/bank-kit", "@sol-ui/components"],
 };
 
 const withMDX = createMDX({

@@ -31,6 +31,7 @@
     "react-dom": "^19.0.0"
   },
   "dependencies": {
+    "@sol-ui/components": "*",
     "@tailwindcss/vite": "^4.3.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
