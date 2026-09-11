@@ -17,15 +17,35 @@ import {
 } from "@tabler/icons-react";
 import * as React from "react";
 
+export type DeviceType = "desktop" | "mobile" | "tablet";
+
 const DevicesTypes = [
   {
+    name: "desktop" as const,
+    label: "Desktop preview",
     icon: <IconDeviceDesktop size={16} />,
   },
-  { icon: <IconDeviceMobile size={16} /> },
-  { icon: <IconDeviceTablet size={16} /> },
+  {
+    name: "mobile" as const,
+    label: "Mobile preview",
+    icon: <IconDeviceMobile size={16} />,
+  },
+  {
+    name: "tablet" as const,
+    label: "Tablet preview",
+    icon: <IconDeviceTablet size={16} />,
+  },
 ];
 
-export function TabPanel({code , command} :{code : string , command : string}) {
+export function TabPanel({
+  command,
+  selectedDevice,
+  onDeviceChange,
+}: {
+  command: string;
+  selectedDevice: DeviceType;
+  onDeviceChange: (device: DeviceType) => void;
+}) {
   const [isTabOpenPreview, setIsTabOpenPreview] = React.useState<boolean>(true);
   const [isTabOpenCode, setIsTabOpenCode] = React.useState<boolean>(false);
   return (
@@ -55,7 +75,7 @@ export function TabPanel({code , command} :{code : string , command : string}) {
       </div>
 
       <div className="flex items-center absolute right-0 gap-2">
-        <Devices />
+        <Devices selectedDevice={selectedDevice} onDeviceChange={onDeviceChange} />
         <Partition />
         <InstallationCommands command={command}/>
       </div>
@@ -63,16 +83,27 @@ export function TabPanel({code , command} :{code : string , command : string}) {
   );
 }
 
-export const Devices = () => {
+export const Devices = ({
+  selectedDevice,
+  onDeviceChange,
+}: {
+  selectedDevice: DeviceType;
+  onDeviceChange: (device: DeviceType) => void;
+}) => {
   return (
     <div className="flex border rounded-lg">
-      {DevicesTypes.map((el, id) => {
+      {DevicesTypes.map((device) => {
         return (
-          <div key={id} className="">
+          <div key={device.name}>
             <Button
-            typeOfBtn="white"
-            className="active:translate-y-0 flex py-[6.5px] border-0 rounded-lg">
-              {el.icon}
+              type="button"
+              typeOfBtn={selectedDevice === device.name ? "black" : "white"}
+              className="active:translate-y-0 flex py-[6.5px] border-0 rounded-lg"
+              aria-label={device.label}
+              aria-pressed={selectedDevice === device.name}
+              onClick={() => onDeviceChange(device.name)}
+            >
+              {device.icon}
             </Button>
           </div>
         );
