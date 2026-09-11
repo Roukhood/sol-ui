@@ -5,6 +5,7 @@ import ThemeToggle from "./theme-toggle";
 import { GithubIcon } from "./icons";
 import { IconMenu3 } from "@tabler/icons-react";
 import * as React from "react";
+import { Button } from "@sol-ui/components";
 function BankKitNav() {
   const [isView, setIsView] = React.useState(false);
   return (
@@ -47,7 +48,7 @@ function BankKitNav() {
           <div className="flex items-center justify-between ">
             <SolUINameLogoElement/>
             <div className="">
-              <button
+              <Button
                 aria-label="hamburger-icon"
                 className="text-24 font-semibold border py-2 px-3 rounded-[4px] w-10 h-10  flex items-center justify-center "
                 onClick={() => setIsView((prev) => !prev)}
@@ -58,7 +59,7 @@ function BankKitNav() {
                   hamburger
                 </span>
                   <IconMenu3 />
-              </button>
+              </Button>
             </div>
           </div>
           {

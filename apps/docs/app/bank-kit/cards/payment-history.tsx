@@ -1,3 +1,5 @@
+import { Card, Heading, SubHeading } from "@sol-ui/components";
+
 const dummyTransections = [
   {
     status: "Paid to",
@@ -18,13 +20,9 @@ const dummyTransections = [
 
 export const History = () => {
   return (
-    <div className="max-w-sm h-fit">
-      <div data-slot="card-title" className="text-md font-medium mb-1 pl-1">
-        History
-      </div>
-      <div data-slot="heading" className=" text-(--text-primary) text-sm pl-1">
-        March
-      </div>
+    <Card className="max-w-sm h-fit border-none rounded-none">
+      <Heading className="mb-1 pl-1">History</Heading>
+      <SubHeading className=" pl-1">March</SubHeading>
       <div className="mt-2">
         {dummyTransections.map((el, id) => {
           return (
@@ -37,7 +35,7 @@ export const History = () => {
           );
         })}
       </div>
-    </div>
+    </Card>
   );
 };
 
@@ -54,19 +52,13 @@ export const HistoryList = ({
     <div className="flex justify-between items-center bg-(--hover-secondary)/40  hover:bg-(--hover-secondary)  py-3 px-3 select-none border-b ">
       <div className="">
         {status == "Paid to" ? (
-          <div
-            data-role="payment-type"
-            className="text-[12px] text-(--text-primary)"
-          >
+          <SubHeading data-role="payment-type" className="text-[12px]">
             Paid to
-          </div>
+          </SubHeading>
         ) : (
-          <div
-            data-role="payment-type"
-            className="text-[12px] text-(--text-primary)"
-          >
+          <SubHeading data-role="payment-type" className="text-[12px]">
             Received from
-          </div>
+          </SubHeading>
         )}
         <p className="text-md font-medium">{name}</p>
       </div>

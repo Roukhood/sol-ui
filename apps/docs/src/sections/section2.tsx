@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Button } from "../components/ui/button";
+import { Button } from "@sol-ui/components";
 import { ListOfComponents } from "../components/docs/components-list";
 import Link from "next/link";
 import { cn } from "@/lib/utils/cn";
