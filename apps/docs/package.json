@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run build:bank-docs",
+    "prebuild:docs": "npm run build:bank-docs",
     "build": "next build",
     "start": "next start",
     "build:docs": "fumadocs-mdx",
     "lint": "eslint",
-    "build:registry": "npx tsx scripts/build-registry.mts"
+    "build:registry": "npx tsx scripts/build-registry.mts",
+    "build:bank-docs": "node scripts/generate-bank-docs.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",

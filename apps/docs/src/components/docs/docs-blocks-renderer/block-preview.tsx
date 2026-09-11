@@ -1,43 +1,37 @@
 "use client";
-import { useRef , useEffect} from "react";
-import { ResizableHandler, ResizablePanel, ResizablePanelGroup } from "../resizable"
-import IframeRenderer from "./iframe-block-renderer"
+import type { DeviceType } from "@/app/view/tooltips/tab-panal";
+import IframeRenderer from "./iframe-block-renderer";
 
-import { PanelImperativeHandle} from "react-resizable-panels";
+const deviceWidths: Record<DeviceType, string> = {
+  desktop: "100%",
+  tablet: "768px",
+  mobile: "375px",
+};
 
-const BlockPreview = ({src , idx} : {src : string , idx : any}) =>{
-    const resizablePanelRef = useRef<PanelImperativeHandle>(null);
-    
-//   useEffect(() => {
-//     if (resizablePanelRef.current) {
-//       resizablePanelRef.current.resize(blockScreen?.size || 100);
-//     }
-//   }, [selectedScreenSize]);
-    return(
-        <ResizablePanelGroup
-                orientation="horizontal"
-                className="relative z-10 after:absolute after:inset-0">
-                  <ResizablePanel
-                  className="relative  overflow-hidden"
-                  defaultSize="100%"
-                  minSize="30%"
-                  
-                  >
-                        <IframeRenderer
-                    id={idx}
-                    // iframeRef={iframeRef}
-                      isCached
-                      src={`/view/components/${src}`}
-                      title="abc"
-                      />
-                   
-                  </ResizablePanel>
-                  <ResizableHandler 
-                  className="relative w-3  rounded-[min(var(--radius-2xl),24px)] after:absolute after:top-1/2"
-                  />
-                  <ResizablePanel defaultSize="0%" minSize="0%"/>
-</ResizablePanelGroup>
-    )
-}
+const BlockPreview = ({
+  src,
+  idx,
+  device,
+}: {
+  src: string;
+  idx: string;
+  device: DeviceType;
+}) => {
+  return (
+    <div className="flex w-full justify-center overflow-auto">
+      <div
+        className="max-w-full shrink-0 transition-[width] duration-200 ease-out"
+        style={{ width: deviceWidths[device] }}
+      >
+        <IframeRenderer
+          id={idx}
+          isCached
+          src={`/view/components/${src}`}
+          title={`${src} preview`}
+        />
+      </div>
+    </div>
+  );
+};
 
 export default BlockPreview;
