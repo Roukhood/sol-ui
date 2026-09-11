@@ -1,7 +1,6 @@
 import type { ComponentType } from "react";
 import { HeroOne, HeroTwo } from "./blocks";
 import {
-  CardOne,
   PaymentOne,
   PaymentThree,
   PaymentTwo,
@@ -70,13 +69,7 @@ export const registry: RegistryItem[] = [
     type: "component",
     component: PricingTwo,
   },
-  {
-    slug: "cards-one",
-    title: "Card One",
-    category: "cards",
-    type: "component",
-    component: CardOne,
-  },
+
 ];
 
 export const blockItems = registry.filter((item) => item.type === "block");

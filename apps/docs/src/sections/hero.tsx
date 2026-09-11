@@ -2,43 +2,38 @@
 
 import Link from "next/link";
 import { NpmSmallIcon } from "../components/icons";
-import { Button } from "../components/ui/button";
+import { Button } from "@sol-ui/components";
 import { useTheme } from "next-themes";
 import { motion } from "motion/react";
 import React from "react";
 
 function Hero() {
+  const { resolvedTheme } = useTheme();
+  const [width, setWidth] = React.useState(0);
 
-  const {resolvedTheme} = useTheme();
-  const [width , setWidth] = React.useState(0);
-
-  React.useEffect(()=>{
-    const handleResize  = () =>{
+  React.useEffect(() => {
+    const handleResize = () => {
       setWidth(window.innerWidth);
-    }
+    };
     handleResize();
     window.addEventListener("resize", handleResize);
-    return()=> window.removeEventListener("resize" , handleResize);
-  } ,[]);
-
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   let xPosition = 0;
   let xEndPosition = 0;
 
-
-  if(width < 500){
-     xPosition  = 100 ;
-     xEndPosition = -800;
-  }else{
-    xPosition = 900,
-    xEndPosition = -1000
+  if (width < 500) {
+    xPosition = 100;
+    xEndPosition = -800;
+  } else {
+    ((xPosition = 900), (xEndPosition = -1000));
   }
- 
+
   const dummyHeroData = [
     {
       name: "Music ui",
       img: "/Hero-1.png",
-
     },
 
     {
@@ -48,9 +43,8 @@ function Hero() {
     {
       name: "bank ui",
       img: "/Hero-4.png",
-
     },
-  ]
+  ];
 
   return (
     <section className="min-h-screen h-full w-full pt-10 flex flex-col justify-between  items-center  ">
@@ -60,58 +54,64 @@ function Hero() {
         </span>
         <motion.h1
           initial={{
-            opacity: 0
+            opacity: 0,
           }}
           animate={{
-            opacity: 1
+            opacity: 1,
           }}
-          className="font-serif text-[2.5rem]/[2.75rem] tracking-[-0.8px] text-text-main lg:text-[3.125rem]/[2.25rem] lg:tracking-[-2px] -pl-1 text-center md:text-start">
+          className="font-serif text-[2.5rem]/[2.75rem] tracking-[-0.8px] text-text-main lg:text-[3.125rem]/[2.25rem] lg:tracking-[-2px] -pl-1 text-center md:text-start"
+        >
           With well crafted pixels to
         </motion.h1>
 
         <motion.p
           initial={{
-            opacity: 0
+            opacity: 0,
           }}
           animate={{
-            opacity: 1
+            opacity: 1,
           }}
           transition={{
-            delay: 0.2
+            delay: 0.2,
           }}
-          className="md:text-lg/6 text-[#08090a99] dark:text-[#ffffffb3] text-center">
-          Reusable & Intractive UI blocks and components <br />for{" "}
-          <span className="font-medium text-black dark:text-white ">apps</span> and{" "}
+          className="md:text-lg/6 text-[#08090a99] dark:text-[#ffffffb3] text-center"
+        >
+          Reusable & Intractive UI blocks and components <br />
+          for{" "}
+          <span className="font-medium text-black dark:text-white ">
+            apps
+          </span>{" "}
+          and{" "}
           <span className="font-medium text-black dark:text-white">web</span>.
         </motion.p>
 
         <motion.div
-
           initial={{
-            opacity: 0
+            opacity: 0,
           }}
           animate={{
-            opacity: 1
+            opacity: 1,
           }}
-
           transition={{
-            delay: 0.5
+            delay: 0.5,
           }}
-
-          className="flex gap-3 items-center">
+          className="flex gap-3 items-center"
+        >
           <Link href="/docs/components/badge">
             <Button
               aria-label="Get started"
-              typeOfBtn={resolvedTheme == "dark" ? "white": "black"}
-              className=" ">
+              variant={resolvedTheme == "dark" ? "default" : "inverse"}
+              className=" "
+            >
               <p>Get started</p>
             </Button>
           </Link>
           <Link href="https://www.npmjs.com/package/solui">
             <Button
-             typeOfBtn={resolvedTheme == "light" ? "white": "black"}
+              variant={resolvedTheme == "light" ? "default" : "inverse"}
               aria-label="npm icon"
-              className="py-[7px]">
+              className="py-[7px]"
+            >
               <NpmSmallIcon />
             </Button>
           </Link>
@@ -119,18 +119,17 @@ function Hero() {
       </div>
 
       <motion.div
-
         initial={{
-          opacity: 0
+          opacity: 0,
         }}
         animate={{
-          opacity: 1
+          opacity: 1,
         }}
-
         transition={{
-          delay: 0.7
+          delay: 0.7,
         }}
-        className="w-full overflow-hidden">
+        className="w-full overflow-hidden"
+      >
         <motion.div
           initial={{
             x: xPosition,
@@ -138,32 +137,30 @@ function Hero() {
           animate={{
             x: [xPosition, xEndPosition],
           }}
-
           transition={{
             duration: 30,
             repeat: Infinity,
           }}
-          className="flex  gap-3 ">
-          {
-            dummyHeroData.map((el, id) => {
-              return <WorkDemoScroller
-                name={el.name}
-                img={el.img}
-                key={id} />
-            })
-          }
+          className="flex  gap-3 "
+        >
+          {dummyHeroData.map((el, id) => {
+            return <WorkDemoScroller name={el.name} img={el.img} key={id} />;
+          })}
         </motion.div>
       </motion.div>
-
     </section>
   );
 }
 
 export default Hero;
 
-
-
-export const WorkDemoScroller = ({ img, name }: { img: string, name: string }) => {
+export const WorkDemoScroller = ({
+  img,
+  name,
+}: {
+  img: string;
+  name: string;
+}) => {
   return (
     <div className="">
       <div className="h-90 w-90 overflow-hidden">
@@ -174,7 +171,9 @@ export const WorkDemoScroller = ({ img, name }: { img: string, name: string }) =
           className="w-full h-full object-cover rounded-[2px]"
         />
       </div>
-      <p className="text-center text-[#08090a99] dark:text-[#ffffffb3] select-none">{name}</p>
+      <p className="text-center text-[#08090a99] dark:text-[#ffffffb3] select-none">
+        {name}
+      </p>
     </div>
-  )
-}
+  );
+};
