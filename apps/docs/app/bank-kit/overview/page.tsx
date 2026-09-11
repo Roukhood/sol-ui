@@ -2,7 +2,6 @@ import { TabPanel } from "@/app/view/tooltips/tab-panal";
 import BlockPreview from "@/src/components/docs/docs-blocks-renderer/block-preview";
 import  { registry } from "@sol-ui/bank-kit";
 
-
 function Overview() {
   return (
     <div className="flex flex-col gap-10 ">
@@ -21,7 +20,6 @@ function Overview() {
               </div>
             </div>
           </div>
-        
         );
       })}
     </div>

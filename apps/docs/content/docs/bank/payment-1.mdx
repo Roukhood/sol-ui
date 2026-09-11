@@ -83,13 +83,20 @@ export function InfoBadge({ info = "Buy Coffee" }: { info: string }) {
 
 ## Installation
 
-<DocTabs items={['Agents']}>
+<DocTabs items={[ 'Command' , 'Agents']}>
+<DocTab value="Command">
+
+<PackageManagers
+  commands={{
+    cli: "npx solui@latest add badge",
+  }}
+/>
+  </DocTab>
   <DocTab value="Agents">
     Use any MCP-compatible coding agent to install this component. Ask your agent:
 
     > Install the `payment-1` Sol UI component.
 
-    The agent can use the `install_components` tool to add the component and its required dependencies to your project.
   </DocTab>
 </DocTabs>
 

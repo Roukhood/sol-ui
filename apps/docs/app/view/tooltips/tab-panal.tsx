@@ -3,7 +3,6 @@
 import { useCopyToClipboard } from "@/hooks/useCopy";
 import { cn } from "@/lib/utils/cn";
 
-
 import {
   CheckLinearIcon,
   CLIBoldIcon,
@@ -25,14 +24,16 @@ const DevicesTypes = [
   { icon: <IconDeviceTablet size={16} /> },
 ];
 
-export function TabPanel({code , command} :{code : string , command : string}) {
+export function TabPanel({ code, command }: { code: string; command: string }) {
   const [isTabOpenPreview, setIsTabOpenPreview] = React.useState<boolean>(true);
   const [isTabOpenCode, setIsTabOpenCode] = React.useState<boolean>(false);
   return (
     <div className="flex items-center w-full  max-w-4xl relative mx-auto">
       <div className="flex items-center border w-fit rounded-lg ">
-        <Button 
-          className={cn("active:translate-y-0 border-0 rounded-lg transition-all")}
+        <Button
+          className={cn(
+            "active:translate-y-0 border-0 rounded-lg transition-all",
+          )}
           typeOfBtn={isTabOpenPreview ? "black" : ""}
           onClick={() => {
             setIsTabOpenPreview(true);
@@ -43,21 +44,22 @@ export function TabPanel({code , command} :{code : string , command : string}) {
         </Button>
 
         <Button
-          className={cn("active:translate-y-0 border-0 rounded-lg transition-all ")}
+          className={cn(
+            "active:translate-y-0 border-0 rounded-lg transition-all ",
+          )}
           typeOfBtn={isTabOpenCode ? "black" : ""}
           onClick={() => {
-            setIsTabOpenCode(true)
-          setIsTabOpenPreview(false)
-        }}
+            setIsTabOpenCode(true);
+            setIsTabOpenPreview(false);
+          }}
         >
           <p>Code</p>
         </Button>
       </div>
 
+      <Devices />
       <div className="flex items-center absolute right-0 gap-2">
-        <Devices />
-        <Partition />
-        <InstallationCommands command={command}/>
+        <InstallationCommands command={command} />
       </div>
     </div>
   );
@@ -70,8 +72,9 @@ export const Devices = () => {
         return (
           <div key={id} className="">
             <Button
-            typeOfBtn="white"
-            className="active:translate-y-0 flex py-[6.5px] border-0 rounded-lg">
+              typeOfBtn="white"
+              className="active:translate-y-0 flex py-[6.5px] border-0 rounded-lg"
+            >
               {el.icon}
             </Button>
           </div>
@@ -81,13 +84,13 @@ export const Devices = () => {
   );
 };
 
-export const InstallationCommands = ({command} : {command : string}) => {
-  const { copy, copied } = useCopyToClipboard({code : command});
+export const InstallationCommands = ({ command }: { command: string }) => {
+  const { copy, copied } = useCopyToClipboard({ code: command });
 
   return (
     <div className="border rounded-lg ">
       <Button
-      typeOfBtn="white"
+        typeOfBtn="white"
         className="active:translate-y-0 flex gap-2 border-0 rounded-lg "
         onClick={copy}
       >
@@ -96,7 +99,7 @@ export const InstallationCommands = ({command} : {command : string}) => {
         ) : (
           <CopyLinearIcon className="!size-3 opacity-50 " />
         )}
-        <CLIBoldIcon  />
+        <CLIBoldIcon />
 
         <span>{command}</span>
       </Button>
@@ -107,4 +110,3 @@ export const InstallationCommands = ({command} : {command : string}) => {
 export const Partition = () => {
   return <div className="border h-5" />;
 };
-
