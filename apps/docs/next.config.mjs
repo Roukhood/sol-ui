@@ -2,8 +2,8 @@ import { createMDX } from "fumadocs-mdx/next";
 
 /** @type {import('next').NextConfig} */
 const config = {
- // configs
- reactStrictMode: true,
+  reactStrictMode: true,
+  transpilePackages: ["@sol-ui/bank-kit"],
 };
 
 const withMDX = createMDX({

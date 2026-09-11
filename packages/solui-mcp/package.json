@@ -1,0 +1,14 @@
+{
+  "name": "@sol-ui/mcp",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "solui-mcp": "./dist/src/server.js"
+  },
+  "scripts": {
+    "test": "tsc -p tsconfig.json && node --test dist/test/*.test.js",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "build": "npm run build --workspace=@sol-ui/component-installer && tsc -p tsconfig.json"
+  }
+}

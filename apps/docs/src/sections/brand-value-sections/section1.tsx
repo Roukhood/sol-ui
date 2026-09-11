@@ -1,7 +1,6 @@
 "use client";
 import { PackageManagers } from "@/src/components/docs/package-manager";
-import { motion, useAnimate } from "motion/react";
-import { useState } from "react";
+import { motion } from "motion/react";
 
 export const BrandInformationSection = () => {
   return (

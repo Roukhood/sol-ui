@@ -1,0 +1,16 @@
+{
+  "name": "solui",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "solui": "./dist/src/cli.js"
+  },
+  "dependencies": {
+    "@sol-ui/component-installer": "*"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  }
+}

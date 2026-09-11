@@ -22,6 +22,8 @@
     "paths": {
       "@/*": ["./*"],
       "@expo/*" : ["../expo/*"],
+      "@sol-ui/bank-kit": ["../packages/bank-kit-later/src/index.ts"],
+      "@sol-ui/bank-kit/*": ["../packages/bank-kit-later/src/*"],
       "fumadocs-mdx:collections/*": [".source/*"]
     }
   },

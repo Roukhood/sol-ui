@@ -4,16 +4,20 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run build:bank-docs",
+    "prebuild:docs": "npm run build:bank-docs",
     "build": "next build",
     "start": "next start",
     "build:docs": "fumadocs-mdx",
     "lint": "eslint",
-    "build:registry": "npx tsx scripts/build-registry.mts"
+    "build:registry": "npx tsx scripts/build-registry.mts",
+    "build:bank-docs": "node scripts/generate-bank-docs.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.0.0",
     "@paper-design/shaders-react": "^0.0.71",
     "@radix-ui/react-tabs": "^1.1.13",
+    "@sol-ui/bank-kit": "*",
     "@tabler/icons-react": "^3.36.1",
     "@types/mdx": "^2.0.13",
     "clsx": "^2.1.1",
@@ -29,6 +33,7 @@
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "react-native-web": "^0.21.2",
+    "react-resizable-panels": "^4.12.2",
     "tailwind-merge": "^3.4.0"
   },
   "devDependencies": {

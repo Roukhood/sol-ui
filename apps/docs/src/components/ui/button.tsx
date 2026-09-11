@@ -10,17 +10,16 @@ type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
 export const Button = ({
   className,
   children,
-  
-  typeOfBtn = "white",
+  typeOfBtn,
   ...props
 }: ButtonProps) => {
   return(
     <button
-   
+    
     className={cn(
-      "text-[14px] font-medium  py-2 px-4 rounded-xs flex items-center cursor-pointer active:scale-[101%] ",
+      "text-[14px] py-1 px-2.5 rounded-xs flex items-center cursor-pointer active:translate-y-px transition-all select-none border",
       className,
-      typeOfBtn == "black" ? "bg-black text-white  dark:border hover:bg-black/90  dark:hover:bg-[#08090a] " : " hover:bg-black/2 dark:hover:bg-white/90 dark:bg-white dark:text-black border"
+      typeOfBtn == "black" ? "bg-background-inverse text-foreground-inverse hover:bg-(--hover-primary) active:bg-(--hover-primary)"  : "bg-background text-foreground hover:bg-(--hover-secondary) active:bg-(--hover-secondary)"
     )}
     {...props}
   >

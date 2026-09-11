@@ -1,24 +1,57 @@
 @import "tailwindcss";
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
+@import "@sol-ui/bank-kit/styles.css";
 
-@custom-variant dark (&:where(.dark, .dark *));
+/* Fallback scan path (relative to this file) for bank-kit Tailwind classes */
+@source "../../packages/bank-kit-later/src/**/*.{js,ts,jsx,tsx}";
+
+@custom-variant dark (&:is(.dark *));
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #000000;
+  --danger: red ;
+  --border-primary: black;
+  --hover-primary:  hsl(0, 0%, 0% , 80%);
+  --hover-secondary: hsl(0, 0%, 0% , 3%);
+  --text-color-primary : #08090a99;
+  --ring : #97979799;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-danger:var(--danger);
+
+  --color-background-inverse: var(--foreground);
+  --color-foreground-inverse: var(--background);
+
+  --border-primary:var(--border-primary);
+
+
+  --hover-primary : var(--hover-primary);
+  --hover-secondary: var(--hover-secondary);
+
+  --text-primary: var(--text-color-primary);
+
+  --ring-primary: var(--ring)
+
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 .dark {
   --background: #000000;
-  --foreground: oklch(0.985 0 0);
+  --foreground: #ffffff;
+ --danger : red;
+--border-primary:black;
+  /* hover  */
+  --hover-primary: hsl(0, 0%, 100%, 90%);
+  --hover-secondary: hsla(0, 40%, 91%, 0.05);
+
+
+  --text-color-primary: hsla(0, 1%, 82%, 0.8) ;
   --card: #000000;
   --card-foreground: oklch(0.985 0 0);
   --popover: #000000;
@@ -35,7 +68,7 @@
   --destructive-foreground: oklch(0.637 0.237 25.331);
   --border: #1a1a1a;
   --input: #1a1a1a;
-  --ring: #1a1a1a;
+  --ring: #c22424;
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
@@ -55,130 +88,55 @@
 @layer base {
   body {
     @apply bg-background text-foreground;
-   
-
   }
-}
-
-
-
-/* css for the animate the cards */
-
-.card {
-  --offsetY: 0vmin;
-  --rotate: 0deg;
-  --translateX: 0vmin;
-  --translateY: 0vmin;
-  width: 30vmin;
-  height: 60vmin;
-  overflow: hidden;
-  flex-shrink: 0;
-
-  transform: rotate(var(--rotate)) translateX(var(--translateX))
-    translateY(calc(var(--offsetY)+ var(--translateY)));
-  transition: all 0.3s linear;
-
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  &:hover {
-  
-    scale: 1.05;
-    transition: all 0.3s linear;
-  }
-}
-
-.card:nth-child(1) {
-  --rotate: -20deg;
-  --translateX: 30vmin;
-  --translateY : 10vmin;
-  transform: rotate(var(--rotate)) translateX(var(--translateX))
-    translateY(calc(var(--offsetY)+ var(--translateY)));
-
-}
-
-
-.card:nth-child(2) {
-  transform: rotate(-5deg);
-
-}
-.card:nth-child(3) {
-  transform: rotate(-5deg);
-}
-.card:nth-child(5) {
-  transform: rotate(5deg);
-  --translate : 100px
   
 }
 
-.card:nth-child(6) {
-  transform: rotate(5deg);
-  &:hover{
 
-    transform: rotate(-5deg) translateY(var(--translate));
-    
-  }
-}
-.card:nth-child(7) {
-  transform: rotate(5deg);
+/* hide scrollbar */
+.scrollbar-none::-webkit-scrollbar{
+  scrollbar-width: none;
+  display: none;
 }
 
-
-.card:hover + .card{
-  background-color: rgb(140, 255, 0);
-  transform:  translateX(10vmin);
-} 
-
-.card:hover + .card + .card{
-  background-color: blue;
-} 
-
-.card:has(+.card:hover){
-  background-color: blueviolet;
-  transform: translateX(-10vmin);
+@keyframes scrollUP {
+0% {
+transform: translateY(100%);
 }
-
-.card:has( .card +.card:hover){
-  background-color: rgb(227, 5, 219);
+100%{
+transform:translateY(0);
+}
+};
+.scrollUp{
+animation: scrollUP ease-in 100ms;
 }
 
 
-/* section-1 photo cards animation */
+/* repeating linear gradients */
 
-
-
-/* Base thumbnail height (Tailwind `h-12` = 48px) */
-.photo-card {
-  height: 48px;
-  transition: height 0.3s linear, transform 0.3s linear;
+.bg-grid-red{
+  background:repeating-linear-gradient(
+    45deg , rgb(249, 10, 10) 0px , rgb(255, 1, 1) 2px , transparent 1px , transparent 10px
+  )
 }
 
-.photo-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.bg-grid-green{
+  background:repeating-linear-gradient(
+    45deg , rgb(195, 233, 199) 0px , rgb(181, 218, 185) 2px , transparent 2px , transparent 10px
+  )
 }
 
-/* Default: expand the second card */
-.photo-card:nth-child(2) {
-  height: 200px;
+
+.screenshot-mode #nd-sidebar,
+.screenshot-mode #nd-toc,
+.screenshot-mode #nd-page article > *:not(#docs-body),
+.screenshot-mode #nd-page #docs-body > *:not(#component-preview),
+.screenshot-mode #component-preview-tab-list {
+  opacity: 0 !important;
 }
 
-/* Expand hovered card */
-.photo-card:hover {
-  height: 200px;
+.scroll-animation{
+  scroll-behavior: smooth;
+  scroll-margin-top: 20px;
+  transition: transform 200ms ease;
 }
-
-/* Reset second card when hovering first (previous sibling selector via :has()) */
-.photo-card:nth-child(2):has(+ .photo-card:hover),
-.photo-card:nth-child(2):has(~ .photo-card:nth-child(3):hover) {
-  height: 48px;
-}
-
-/* Reset second card height when hovering FIRST card */
-.photo-card:nth-child(1):hover ~ .photo-card:nth-child(2) {
-  height: 48px !important;
-}
-

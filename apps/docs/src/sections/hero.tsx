@@ -54,8 +54,10 @@ function Hero() {
 
   return (
     <section className="min-h-screen h-full w-full pt-10 flex flex-col justify-between  items-center  ">
-    
-      <div className="flex flex-col gap-3 justify-center items-center pb-10 md:pb-0">
+      <div className="flex flex-col gap-3 justify-center items-center pb-10 md:pb-4">
+        <span className="bg-(--hover-secondary) text-foreground text-sm border rounded-full px-1 pb-px hover:bg-(--hover-primary)/10 active:bg-(--hover-primary)/10 select-none">
+          New Bank Kit
+        </span>
         <motion.h1
           initial={{
             opacity: 0
@@ -109,7 +111,7 @@ function Hero() {
             <Button
              typeOfBtn={resolvedTheme == "light" ? "white": "black"}
               aria-label="npm icon"
-              className="py-[11px]">
+              className="py-[7px]">
               <NpmSmallIcon />
             </Button>
           </Link>

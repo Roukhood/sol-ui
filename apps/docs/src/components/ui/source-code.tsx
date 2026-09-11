@@ -1,5 +1,4 @@
-import fs from "fs/promises";
-import path from "path";
+
 import { CodeBlock } from "fumadocs-ui/components/codeblock";
 import { codeToHtml } from "shiki";
 

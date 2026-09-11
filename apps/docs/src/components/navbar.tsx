@@ -1,44 +1,17 @@
 "use client";
 
-import { IconMenu3, IconMoon, IconSun } from "@tabler/icons-react";
-import { AnimatePresence, motion } from "motion/react";
-import { useTheme } from "next-themes";
+import { IconMenu3} from "@tabler/icons-react";
+
 import Link from "next/link";
 import { SearchLinearIcon } from "./icons/searchIcon";
 import * as React from "react";
-import { SoluiNameLogo, SoluiNameLogoBlack } from "./svgs";
+
 import { GithubIcon } from "./icons"
 
-import { Button } from "./ui/button";
 
-// Theme Toggle Component
-const ThemeToggle = () => {
-  const { theme, setTheme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = React.useState(false);
+import SolUINameLogoElement from "./solui-logo-element";
+import ThemeToggle from "./theme-toggle";
 
-  React.useEffect(() => {
-    setMounted(true);
-  }, []);
-
-  if (!mounted) {
-    return null;
-  }
-
-  return (
-    <Button
-      onClick={() => setTheme(resolvedTheme === "light" ? "dark" : "light")}
-      className="py-[11px] w-fit border-none hover:bg-white dark:hover:bg-black px-1 py-1"
-      aria-label="Toggle theme"
-      typeOfBtn={resolvedTheme == "light" ? "white" : "black"}
-    >
-      {theme == "light" ? (
-        <IconMoon className="w-5 h-5" />
-      ) : (
-        <IconSun className="w-5 h-5" />
-      )}
-    </Button>
-  );
-};
 
 const searchButton = (
   <button
@@ -64,36 +37,33 @@ const searchButton = (
 
 function Navbar() {
 
-
-  const [index, setIndex] = React.useState(0);
   const [isView, setIsView] = React.useState(false);
 
   return (
     <nav className="border border-l-0 border-r-0 border-t-0 border-b sticky top-0 bg-white/90 dark:bg-black/90 z-50">
-      <div className=" py-5 md:px-8 px-4">
+      <div className="py-4 md:px-8 px-4">
         {/* desktop nav */}
         <div className="hidden lg:block">
           <div className="flex items-center justify-between ">
             {/* solui name logo  */}
-            <div className="">
-              <div className="dark:hidden">
-                <SoluiNameLogo />
-              </div>
-              <div className="dark:block hidden">
-                <SoluiNameLogoBlack />
-              </div>
-            </div>
+            <SolUINameLogoElement/>
             <div className="flex items-center justify-between gap-3">
+              <Link href="/">
+                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground active:translate-y-px select-none transition-all">
+                  Home
+                </p>
+              </Link>
               <Link href="/docs/Installation">
-                <p>
+                <p data-slot="nav-link" className=" text-(--text-primary) text-sm hover:bg-[--hover-secondary] active:bg-[--hover-secondary] hover:text-foreground active:translate-y-px select-none transition-all">
                   Docs
                 </p>
               </Link>
               <Link
                 href="https://github.com/satish-solera/sol-ui">
-                <GithubIcon />
+                <span className="sr-only">github</span>
+                <GithubIcon size={20} />
               </Link>
-              <ThemeToggle />
+              <ThemeToggle/>
             </div>
           </div>
         </div>
@@ -101,37 +71,19 @@ function Navbar() {
         {/* smaller devices nav */}
         <div className="block lg:hidden">
           <div className="flex items-center justify-between ">
+            <SolUINameLogoElement/>
             <div className="">
-              <div className="dark:hidden">
-                <SoluiNameLogo />
-              </div>
-              <div className="dark:block hidden">
-                <SoluiNameLogoBlack />
-              </div>
-            </div>
-            <div className="">
-              <motion.button
+              <button
                 className="text-24 font-semibold border py-2 px-3 rounded-[4px] w-10 h-10  flex items-center justify-center "
                 onClick={() => setIsView((prev) => !prev)}
               >
-                <motion.span
-                  initial={{
-                    rotate: 0
-                  }}
-
-                  whileTap={{
-                    rotate: -45
-                  }}
-
-                  transition={{
-                    duration: 0.3,
-                  }}
-                  className=""
+                <span
+                  className="sr-only"
                 >
-
+                  menu hamburger
+                </span>
                   <IconMenu3 />
-                </motion.span>
-              </motion.button>
+              </button>
             </div>
           </div>
 
@@ -150,7 +102,6 @@ function Navbar() {
                   </p>
                 </Link>
                 <ThemeToggle />
-
               </div>
             </div>
           }

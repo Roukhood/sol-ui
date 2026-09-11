@@ -1,12 +1,17 @@
 {
   "name": "sol-ui",
   "private": true,
-  "workspaces": ["apps/*", "packages/*"],
+  "workspaces": [
+    "apps/*",
+    "apps/packages/*",
+    "packages/*"
+  ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "start": "turbo run start"
+    "start": "turbo run start",
+    "test": "npm run test --workspace=@sol-ui/component-installer && npm run test --workspace=@sol-ui/mcp"
   },
   "devDependencies": {
     "turbo": "^2"

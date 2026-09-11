@@ -1,14 +1,12 @@
 "use client";
-import type { Key } from "react";
+
 import * as React from "react";
 
 import { TabsList, Tabs, TabsContent, TabsTrigger } from "../ui/tabs"; // Updated imports
-// import { CodeBlock } from "@/components/ui/code-block"; // Adjust path as needed
 
 import { YarnIcon, NpmSmallIcon, PnpmIcon, BunIcon, CLIBoldIcon } from "../icons";
 
 
-import { CodeBlock } from "fumadocs-ui/components/codeblock";
 import { DynamicCodeBlock } from "fumadocs-ui/components/dynamic-codeblock";
 
 type PackageManagerName = "cli" | "npm" | "yarn" | "pnpm" | "bun";
