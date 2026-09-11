@@ -2,7 +2,7 @@
 
 import { useTheme } from "next-themes";
 import * as React from "react";
-import { Button } from "./ui/button";
+import { Button } from "@sol-ui/components";
 import { IconMoon, IconSun } from "@tabler/icons-react";
 
 export default function ThemeToggle () {
