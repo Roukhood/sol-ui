@@ -2,7 +2,7 @@ import { Card, Heading, SubHeading } from "@sol-ui/components";
 
 export const MoneyScanner = () => {
   return (
-    <Card className="">
+    <Card className="border-none rounded-none bg-transparent">
       <div className="flex justify-center py-6">
         <Scanner />
       </div>

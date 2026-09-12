@@ -1,2 +1,139 @@
-/* Import this in apps that consume bank-kit so Tailwind scans block classNames. */
+/* Bank kit design tokens + motion. Import via `@sol-ui/bank-kit/styles.css`. */
 @source "./**/*.{js,ts,jsx,tsx}";
+
+:root,
+.bank-kit {
+  --bk-background: #ffffff;
+  --bk-foreground: #0a0a0a;
+  --bk-surface: #f6f6f4;
+  --bk-surface-elevated: #ffffff;
+  --bk-muted: #5c5c57;
+  --bk-border: #e8e8e3;
+  --bk-accent: #1d4ed8;
+  --bk-accent-foreground: #ffffff;
+  --bk-danger: #b42318;
+  --bk-success: #067647;
+  --bk-ring: #e8e8ea;
+
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+
+  --bk-duration-press: 160ms;
+  --bk-duration-popover: 200ms;
+  --bk-duration-sheet: 280ms;
+  --bk-duration-modal: 250ms;
+
+  --bk-radius-sm: 8px;
+  --bk-radius-md: 12px;
+  --bk-radius-lg: 16px;
+  --bk-radius-xl: 20px;
+}
+
+/* Hand-tuned dark mode — deep slate, not pure black */
+.dark,
+.dark .bank-kit,
+[data-theme="dark"],
+[data-theme="dark"] .bank-kit {
+  --bk-background: #0c0d10;
+  --bk-foreground: #f3f3f0;
+  --bk-surface: #14161b;
+  --bk-surface-elevated: #1a1d24;
+  --bk-muted: #a3a39b;
+  --bk-border: #2a2e38;
+  --bk-accent: #60a5fa;
+  --bk-accent-foreground: #0c0d10;
+  --bk-danger: #f97066;
+  --bk-success: #47cd89;
+  --bk-ring: #181a1b;
+}
+
+.bank-kit {
+  color: var(--bk-foreground);
+  background: var(--bk-background);
+}
+
+/* Focus ring for keyboard users */
+.bank-kit :where(button, a, input, [tabindex]:not([tabindex="-1"])):focus-visible {
+  outline: 1px solid var(--bk-ring);
+  outline-offset: 2px;
+}
+
+/* Press feedback — transform only */
+.bank-kit [data-bk-press] {
+  transition: transform var(--bk-duration-press) var(--ease-out);
+}
+
+.bank-kit [data-bk-press]:active {
+  transform: scale(0.97);
+}
+
+/* Bottom sheet / slide-in panel */
+.payment-sheet {
+  transform: translateY(0);
+  transition: transform var(--bk-duration-sheet) var(--ease-drawer);
+  will-change: transform;
+  background: var(--bk-surface-elevated);
+  border-color: var(--bk-border);
+  color: var(--bk-foreground);
+}
+
+.payment-sheet[data-state="closed"] {
+  transform: translateY(100%);
+}
+
+/* Chat / agent bubble surface */
+.bk-chat-bubble {
+  border-radius: var(--bk-radius-lg);
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+
+.bk-chat-bubble[data-from="user"] {
+  background: var(--bk-accent);
+  color: var(--bk-accent-foreground);
+}
+
+.bk-chat-bubble[data-from="agent"] {
+  background: color-mix(in oklab, var(--bk-foreground) 10%, transparent);
+  color: var(--bk-foreground);
+}
+
+/* Block / page section shell */
+.bk-block-section {
+  border: 1px solid var(--bk-border);
+  border-radius: var(--bk-radius-xl);
+  background: var(--bk-surface);
+  overflow: clip;
+}
+
+/* RTL: mirror directional chevrons */
+[dir="rtl"] .bk-chevron {
+  transform: scaleX(-1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .payment-sheet,
+  .bank-kit [data-bk-press] {
+    transition-duration: 1ms;
+  }
+
+  .payment-sheet[data-state="closed"] {
+    transform: none;
+    opacity: 0;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+

@@ -4,7 +4,7 @@ import { IconLayoutSidebarFilled } from "@tabler/icons-react";
 import { cn } from "@/lib/utils/cn";
 import { componentItems } from "@sol-ui/bank-kit";
 import Link from "next/link";
-import {Heading} from "@sol-ui/components"
+import { Heading } from "@sol-ui/components";
 type RegistryItem = {
   title: string;
   category: string;
@@ -32,32 +32,30 @@ export const SideBarDocs = () => {
           "w-[550px] relative border-x py-10 transition-all scroll-smooth overflow-y-scroll scrollbar-none ",
         )}
       >
-        <div
-          data-slot="heading"
-          className="pl-9 py-2 text-(--text-primary) hover:text-foreground text-sm flex items-center gap-2 active:translate-y-px select-none transition-all whitespace-nowrap rounded-lg"
-        >
-          <Link href={`/bank-kit/docs/bank-kit/Installation`}>
+        <Heading className="font-normal text-sm px-2 py-1 my-1 ml-8 hover:bg-background-inverse/10 active:bg-background-inverse/10 w-fit rounded-md transition-all ease-linear duration-[200ms]">
+          <Link href={`/bank-kit/docs/bank/Installation`}>
             Introduction
           </Link>
-        </div>
+        </Heading>
 
         {sideBarIsOpen && (
           <div className="pl-8 overflow-hidden">
             {Object.entries(grouped).map(([category, item]) => {
               return (
                 <div key={category} className="">
-                  <Heading className="py-0">{category}</Heading>
+                  <div
+                    data-slot="heading"
+                    className="p-2  text-(--text-primary)  text-sm flex items-center gap-2 active:translate-y-px select-none transition-all whitespace-nowrap rounded-lg"
+                  >
+                    {category}
+                  </div>
                   {item.map((el, id) => {
                     return (
-                      <div
-                        key={id}
-                        data-slot="heading"
-                        className="py-1 pl-1 text-(--text-primary) hover:text-foreground text-sm flex items-center gap-2 active:translate-y-px select-none transition-all whitespace-nowrap rounded-lg"
-                      >
-                        <Link key={id} href={`/bank-kit/docs/bank/${el.slug}`}>
+                      <Heading key={id} className="font-normal text-sm px-2 py-1 my-1 hover:bg-background-inverse/10 active:bg-background-inverse/10 w-fit rounded-md transition-all ease-linear duration-[200ms]">
+                        <Link href={`/bank-kit/docs/bank/${el.slug}`}>
                           {el.title}
                         </Link>
-                      </div>
+                      </Heading>
                     );
                   })}
                 </div>
