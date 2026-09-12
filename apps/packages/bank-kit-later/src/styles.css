@@ -5,7 +5,7 @@
 .bank-kit {
   --bk-background: #ffffff;
   --bk-foreground: #0a0a0a;
-  --bk-surface: #f6f6f4;
+  --bk-surface: #fdfdfd;
   --bk-surface-elevated: #ffffff;
   --bk-muted: #5c5c57;
   --bk-border: #e8e8e3;
@@ -13,7 +13,7 @@
   --bk-accent-foreground: #ffffff;
   --bk-danger: #b42318;
   --bk-success: #067647;
-  --bk-ring: #e8e8ea;
+  --bk-ring: #ffffff;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -37,7 +37,7 @@
 [data-theme="dark"] .bank-kit {
   --bk-background: #0c0d10;
   --bk-foreground: #f3f3f0;
-  --bk-surface: #14161b;
+  --bk-surface: #171717;
   --bk-surface-elevated: #1a1d24;
   --bk-muted: #a3a39b;
   --bk-border: #2a2e38;
@@ -45,7 +45,7 @@
   --bk-accent-foreground: #0c0d10;
   --bk-danger: #f97066;
   --bk-success: #47cd89;
-  --bk-ring: #181a1b;
+  --bk-ring: #000000;
 }
 
 .bank-kit {
@@ -73,7 +73,7 @@
   transform: translateY(0);
   transition: transform var(--bk-duration-sheet) var(--ease-drawer);
   will-change: transform;
-  background: var(--bk-surface-elevated);
+  background: var(--bk-surface);
   border-color: var(--bk-border);
   color: var(--bk-foreground);
 }
@@ -84,7 +84,7 @@
 
 /* Chat / agent bubble surface */
 .bk-chat-bubble {
-  border-radius: var(--bk-radius-lg);
+  /* border-radius: var(--bk-radius-lg); */
   transition:
     background-color 160ms ease,
     color 160ms ease;

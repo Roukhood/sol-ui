@@ -21,12 +21,12 @@ export function DocsPager({
 
   if (variant === "header") {
     return (
-      <div className="flex items-center gap-1">
+      <div className="flex items-center gap-1 ">
         {previous ? (
           <Link
             href={previous.url}
             aria-label={`Previous: ${previous.name}`}
-            className="inline-flex size-8 items-center justify-center rounded-lg border border-fd-border transition-colors hover:bg-background-inverse/10"
+            className="inline-flex size-8 items-center justify-center rounded-lg border border-(--border) transition-colors hover:bg-background-inverse/10"
           >
             <IconArrowLeft className="size-4" />
           </Link>
@@ -35,7 +35,7 @@ export function DocsPager({
           <Link
             href={next.url}
             aria-label={`Next: ${next.name}`}
-            className="inline-flex size-8 items-center justify-center rounded-lg border border-fd-border transition-colors hover:bg-background-inverse/10"
+            className="inline-flex size-8 items-center justify-center rounded-lg border border-(--border) transition-colors hover:bg-background-inverse/10"
           >
             <IconArrowRight className="size-4" />
           </Link>

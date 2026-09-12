@@ -41,11 +41,11 @@ export function DocsCopyPage({ page, url, path }: DocsCopyPageProps) {
   };
 
   return (
-    <div className="relative flex h-8 items-stretch overflow-hidden rounded-lg border ">
+    <div className="relative flex h-8 items-stretch overflow-hidden rounded-lg border  border border-(--border)">
       <button
         type="button"
         onClick={copyPage}
-        className="inline-flex h-full items-center gap-1.5 px-2.5 text-xs font-medium transition-colors hover:bg-background-inverse/10"
+        className="inline-flex h-full items-center gap-1.5 px-2.5 text-xs font-medium transition-colors  hover:bg-background-inverse/10"
       >
         {copied ? (
           <IconCheck className="size-3.5" />
@@ -57,7 +57,7 @@ export function DocsCopyPage({ page, url, path }: DocsCopyPageProps) {
         </span>
       </button>
 
-      <div className="w-px self-stretch " />
+      <div className="w-px self-stretch border border-(--border)" />
 
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>

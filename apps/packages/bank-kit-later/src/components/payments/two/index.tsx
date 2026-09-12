@@ -1,6 +1,16 @@
 "use client";
 import * as React from "react";
-import { Button, Heading, Input, SubHeading } from "@sol-ui/components";
+import {
+  Button,
+  Card,
+  Heading,
+  Input,
+  SubHeading,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardHeader,
+} from "@sol-ui/components";
 import { playBankSound } from "../../../lib/sound";
 import { useSlideSheet } from "../../../lib/use-slide-sheet";
 
@@ -33,21 +43,18 @@ function Payment() {
   };
 
   return (
-    <div
-      className="bank-kit w-full max-w-[18rem] flex items-center justify-center rounded-2xl border border-[var(--bk-border)] bg-[var(--bk-surface)]"
-      role="region"
-      aria-label="Send money"
-    >
-      <div className="w-full relative h-fit py-4 overflow-hidden">
-        <Heading as="h3" className="text-md font-medium mb-1 ps-3 py-0">
-          Sending money to
-        </Heading>
-        <SubHeading className="ps-3 py-0">Satish</SubHeading>
-        <div className="flex flex-col items-center gap-2 my-10">
+    <Card className="max-w-[20rem] h-96 relative overflow-hidden bg-[var(--bk-surface)]">
+      <CardHeader className=" pl-4 py-2 border-b">
+        <CardTitle>Sending money to</CardTitle>
+        <CardDescription>Satish</CardDescription>
+      </CardHeader>
+
+      <CardContent>
+        <div className="flex flex-col items-center justify-center gap-4 h-50">
           <Input
             placeholder="Enter amount"
             aria-label="Enter amount"
-            className="h-auto w-auto border-0 border-b border-[var(--bk-border)] rounded-none px-0 focus-visible:ring-0"
+            className="h-auto w-auto border-0 bg-transparent border-b border-[var(--bk-border)] rounded-none px-0  focus-visible:ring-0"
           />
 
           <div className="flex items-center gap-2 select-none mt-1">
@@ -57,7 +64,7 @@ function Payment() {
               onClick={() => openSheet("pin")}
               className="h-[31px] border-0 rounded-2xl"
             >
-              <span className="pb-[2.5px]">Pay</span>
+              <span className="pb-[2.5px]">Send money</span>
             </Button>
             <Button
               variant="danger"
@@ -70,24 +77,30 @@ function Payment() {
           </div>
         </div>
 
-        <div className="flex flex-col mt-8" role="list" aria-label="Bank accounts">
-          {BankAccounts.map((el, id) => {
-            return (
-              <div
-                key={id}
-                role="listitem"
-                data-slot="bank account"
-                className="transform-gpu text-[var(--bk-muted)] text-sm flex justify-between items-center gap-2 border-b border-[var(--bk-border)] p-3 hover:bg-(--hover-secondary) active:hover:bg-(--hover-secondary)"
-              >
-                <span className="select-none">{el.name}</span>
-                {el.selected && (
-                  <span className="border border-[var(--bk-border)] rounded-full px-2 py-px select-none text-[var(--bk-foreground)]">
-                    Selected
-                  </span>
-                )}
-              </div>
-            );
-          })}
+        <div className="absolute bottom-0 w-full">
+          <div
+            className="flex flex-col mt-8 rounded-b-2xl  "
+            role="list"
+            aria-label="Bank accounts"
+          >
+            {BankAccounts.map((el, id) => {
+              return (
+                <div
+                  key={id}
+                  role="listitem"
+                  data-slot="bank account"
+                  className="transform-gpu text-[var(--bk-muted)] text-sm flex justify-between items-center gap-2 border-b border-[var(--bk-border)] p-3 hover:bg-(--hover-secondary) active:hover:bg-(--hover-secondary)"
+                >
+                  <span className="select-none">{el.name}</span>
+                  {el.selected && (
+                    <span className="border border-[var(--bk-border)] rounded-full px-2 py-px select-none text-[var(--bk-foreground)]">
+                      Selected
+                    </span>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
 
         {del.mounted && (
@@ -109,7 +122,7 @@ function Payment() {
                   onClick={() => closeSheet("close")}
                   className="h-[31px] border-0 rounded-2xl"
                 >
-                  <span className="pb-[2.5px]">No</span>
+                  <span className="pb-[2.5px]">Cancle</span>
                 </Button>
                 <Button
                   variant="danger"
@@ -117,7 +130,7 @@ function Payment() {
                   onClick={() => closeSheet("close")}
                   className="h-[31px] border-0 rounded-2xl"
                 >
-                  <span className="pb-[2.5px]">Cancel payment</span>
+                  <span className="pb-[2.5px]">Continue</span>
                 </Button>
               </div>
             </div>
@@ -144,9 +157,9 @@ function Payment() {
                   autoComplete="one-time-code"
                   placeholder="Enter pin"
                   aria-label="Enter PIN"
-                  className="h-auto border-0 border-b border-[var(--bk-border)] rounded-none  ps-2 py-1 focus-visible:ring-0"
+                  className="h-auto border-0 border-b border-[var(--bk-border)] rounded-2xl ps-2 py-1 focus-visible:ring-0"
                 />
-                <div className="flex items-end justify-end me-8">
+                <div className="flex items-end justify-end me-4">
                   <Button
                     variant="inverse"
                     data-bk-press
@@ -160,8 +173,8 @@ function Payment() {
             </div>
           </div>
         )}
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   );
 }
 

@@ -9,7 +9,7 @@ import { Button } from "@sol-ui/components";
 function BankKitNav() {
   const [isView, setIsView] = React.useState(false);
   return (
-    <nav className="border border-l-0 border-r-0 border-t-0 border-b sticky top-0 bg-white/90 dark:bg-black/90 z-50">
+    <nav className="sticky top-0 bg-white/90 dark:bg-black/90 z-50">
       <div className="py-4 md:px-8 px-4">
         {/* desktop nav */}
         <div className="hidden lg:block">

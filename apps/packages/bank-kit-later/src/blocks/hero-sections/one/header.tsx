@@ -6,7 +6,7 @@ import { Hamburger } from "../../../components/svgs";
 export default function Header() {
   const [smallNav, setSmallNav] = React.useState<boolean>(false);
   return (
-    <header className="md:border  rounded-md max-w-6xl flex items-center justify-between">
+    <header className="md:border rounded-md max-w-6xl flex items-center justify-between">
       <p className="font-semibold font-serif select-none pl-2">sola</p>
       <nav className=" border  rounded-full md:rounded-0 md:border-0  p-[2px]">
         <div className="hidden md:block">
@@ -18,7 +18,7 @@ export default function Header() {
                     aria-label={el}
                     role="navlink"
                     key={id}
-                    className="hover:text-[#08090a99] cursor-pointer"
+                    className="cursor-pointer"
                   >
                     {el}
                   </li>
